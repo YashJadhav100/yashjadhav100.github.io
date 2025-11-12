@@ -5,39 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Yash Jadhav</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-
 <body>
-  <header class="navbar glass">
-    <div class="logo">YJ<span>.</span></div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="education.html">Education</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="navbar">
+    <div class="logo">YJ.</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="about.html">About</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </header>
 
-  <section class="hero" data-aos="fade-up">
-    <h1>About Me</h1>
-    <p>I’m a Computer Science graduate student at Syracuse University specializing in Software Engineering, AI/ML, and Data Science. I love transforming complex problems into scalable, elegant solutions.</p>
+  <section class="about">
+    <div class="about-text">
+      <h2>Who is <span class="highlight">Yash Jadhav?</span></h2>
+      <p>I’m a Computer Science graduate student at Syracuse University specializing in software development, data science, and artificial intelligence. I’m passionate about building intelligent, efficient, and creative systems that make real-world impact.</p>
+      <ul>
+        <li>Curious Learner</li>
+        <li>Problem Solver</li>
+        <li>Innovator at Heart</li>
+      </ul>
+      <a href="assets/Yash_Jadhav_Resume.pdf" class="btn-primary" download>Download CV</a>
+    </div>
+    <div class="about-img">
+      <img src="assets/profile.jpg" alt="Yash Jadhav" />
+    </div>
   </section>
-
-  <section class="facts" data-aos="fade-up">
-    <div class="fact-card"><h3>🚀</h3><p>Focused on scalable AI systems</p></div>
-    <div class="fact-card"><h3>🧠</h3><p>Strong foundation in NLP & automation</p></div>
-    <div class="fact-card"><h3>💡</h3><p>Driven by innovation and data</p></div>
-  </section>
-
-  <footer class="footer glass"><p>© 2025 Yash Jadhav</p></footer>
-  <script src="script.js"></script>
-  <script>AOS.init({ duration: 1000 });</script>
 </body>
 </html>

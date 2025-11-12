@@ -1,117 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Experience | Yash Jadhav</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- Navbar -->
-  <header class="navbar glass">
-    <div class="logo">YJ<span>.</span></div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="experience.html" class="active">Experience</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav class="navbar">
+    <div class="logo">YJ.</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="active" href="experience.html">Experience</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-  <!-- Hero -->
-  <section class="hero" data-aos="fade-up">
-    <h1>Professional Experience</h1>
-    <p>
-      Every milestone has shaped my journey — from research to development, from ideas to impact.
-      Here’s what I’ve been up to.
-    </p>
-  </section>
-
-  <!-- Timeline Section -->
-  <section class="timeline" data-aos="fade-up">
-    <div class="timeline-item glass">
-      <div class="timeline-date">2025 — Present</div>
-      <h3>NEXIS Student Technology Lab – Data Science Researcher</h3>
-      <p>
-        Collaborating with interdisciplinary teams to design and execute data-driven research projects.
-        Applying <b>machine learning</b> and <b>statistical modeling</b> to generate actionable insights,
-        while presenting outcomes at <b>poster showcases</b> and <b>research exhibitions</b>.
-      </p>
-      <span class="skills">Python · SQL · NumPy · pandas · scikit-learn · Data Visualization</span>
-    </div>
-
-    <div class="timeline-item glass">
-      <div class="timeline-date">2025 — 2025</div>
-      <h3>Graduate Research Assistant – Syracuse University</h3>
-      <p>
-        Advanced the <b>ARIES compiler toolchain</b> to optimize ML workloads on PIM architectures.
-        Worked hands-on with <b>LLVM</b> and <b>MLIR</b>, integrating FPGA-specific optimizations for performance boosts.
-      </p>
-      <span class="skills">C++ · MLIR · LLVM · Python · Compiler Design · FPGA</span>
-    </div>
-
-    <div class="timeline-item glass">
-      <div class="timeline-date">2023 — 2024</div>
-      <h3>Chanakya Fellow – TIH-IoT, IIT Bombay</h3>
-      <p>
-        Selected among top fellows to contribute to IoT and Smart Systems research under the
-        <b>Technology Innovation Hub</b>. Collaborated with cross-domain teams, built prototypes, and published project insights.
-      </p>
-      <span class="skills">IoT · Research · System Design · Collaboration</span>
-    </div>
-
-    <div class="timeline-item glass">
-      <div class="timeline-date">2023 — 2023</div>
-      <h3>Frontend Developer – Oasis Infobyte</h3>
-      <p>
-        Developed responsive and user-friendly web applications using <b>HTML, CSS, JavaScript</b>, and <b>Bootstrap</b>.
-        Implemented accessibility-first design and clean UI components.
-      </p>
-      <span class="skills">HTML · CSS · JavaScript · Bootstrap · Git</span>
-    </div>
-
-    <div class="timeline-item glass">
-      <div class="timeline-date">2023 — 2023</div>
-      <h3>Automation Developer – UiPath (IEEE-VIT)</h3>
-      <p>
-        Designed and deployed RPA workflows automating repetitive processes like data entry and reporting.
-        Improved operational efficiency using <b>UiPath Studio</b> and <b>Orchestrator</b>.
-      </p>
-      <span class="skills">UiPath · RPA · Process Automation · Excel Automation</span>
-    </div>
-
-    <div class="timeline-item glass">
-      <div class="timeline-date">2022 — 2023</div>
-      <h3>Creative Head – ETSA VIT</h3>
-      <p>
-        Spearheaded the creative vision for technical events and workshops.
-        Blended <b>design and strategy</b> to build the visual identity of ETSA's initiatives.
-      </p>
-      <span class="skills">Design · Leadership · Event Management · Canva</span>
-    </div>
-
-    <div class="timeline-item glass">
-      <div class="timeline-date">2022 — 2022</div>
-      <h3>Telecommunications Assistant – Doordarshan Kendra</h3>
-      <p>
-        Gained hands-on experience in television broadcasting, transmission systems, and signal routing.
-        Worked with engineers ensuring reliable signal flow and quality control.
-      </p>
-      <span class="skills">Broadcast Systems · Telecommunications · Media Technology</span>
+  <section class="experience">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="exp-card">
+        <h3>Graduate Research Assistant – Syracuse University</h3>
+        <span>May 2025 – Aug 2025</span>
+        <p>Optimizing ML workloads on PIM architectures using MLIR & LLVM in the ARIES compiler project.</p>
+      </div>
+      <div class="exp-card">
+        <h3>Data Science Researcher – NEXIS Lab</h3>
+        <span>Sep 2025 – Present</span>
+        <p>Working on ML-driven research projects using Python, scikit-learn, and SQL for intelligent insight generation.</p>
+      </div>
+      <div class="exp-card">
+        <h3>Chanakya Fellow – IIT Bombay</h3>
+        <span>Jan 2024 – Apr 2024</span>
+        <p>Built IoT automation solutions and developed AI-driven systems with TIH-IOT under the Chanakya Fellowship program.</p>
+      </div>
     </div>
   </section>
-
-  <footer class="footer glass">
-    <p>© 2025 Yash Jadhav | Built with precision & passion 🚀</p>
-  </footer>
-
-  <script src="script.js"></script>
-  <script>AOS.init({ duration: 1000 });</script>
 </body>
 </html>
