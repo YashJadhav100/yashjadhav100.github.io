@@ -3,152 +3,188 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yash Jadhav | AI • Software • Data Systems</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
-</head>
-<body class="bg-[#0a0a0f] text-white font-[Poppins] scroll-smooth">
+  <title>Yash Jadhav | AI • Software • Data</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/profile.jpg" />
+  <script defer src="script.js"></script>
 
-  <!-- 🌐 Navbar -->
-  <header class="fixed w-full top-0 z-50 backdrop-blur-md bg-[#0a0a0f]/80 border-b border-cyan-500/30">
-    <nav class="container mx-auto flex justify-between items-center px-6 py-4">
-      <h1 class="text-2xl font-bold text-cyan-400">Yash Jadhav</h1>
-      <ul class="flex space-x-6 text-gray-300">
-        <li><a href="#home" class="hover:text-cyan-400">Home</a></li>
-        <li><a href="#about" class="hover:text-cyan-400">About</a></li>
-        <li><a href="#experience" class="hover:text-cyan-400">Experience</a></li>
-        <li><a href="#projects" class="hover:text-cyan-400">Projects</a></li>
-        <li><a href="#skills" class="hover:text-cyan-400">Skills</a></li>
-        <li><a href="#education" class="hover:text-cyan-400">Education</a></li>
-        <li><a href="#contact" class="hover:text-cyan-400">Contact</a></li>
-      </ul>
+  <!-- SEO / Meta -->
+  <meta name="description" content="Yash Jadhav — Graduate Research Assistant @ Syracuse University | Building Scalable Intelligent Systems through AI, Data and Software Engineering" />
+  <meta property="og:title" content="Yash Jadhav | AI • Software • Data" />
+  <meta property="og:description" content="MS CS @ Syracuse | AI/ML • Software Dev • Data Analytics • Automation" />
+  <meta property="og:image" content="assets/profile.jpg" />
+  <meta property="og:url" content="https://yashjadhav100.github.io/" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <h1>Yash Jadhav</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- 🏠 Home Section -->
-  <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-r from-cyan-400/10 via-blue-500/10 to-indigo-600/10 animate-pulse blur-3xl"></div>
-    <h2 class="text-5xl sm:text-6xl font-extrabold text-cyan-400 z-10">Building Scalable Intelligent Systems</h2>
-    <p class="mt-4 text-xl text-gray-300 z-10">AI • Software Engineering • Data Analytics</p>
-    <div class="mt-8 flex space-x-4 z-10">
-      <a href="#projects" class="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 rounded-lg font-semibold text-black">View Projects</a>
-      <a href="assets/resume.pdf" target="_blank" class="px-6 py-3 border border-cyan-400 hover:bg-cyan-500/20 rounded-lg font-semibold text-cyan-400">Download Resume</a>
+  <!-- HOME -->
+  <section id="home" class="home">
+    <img src="assets/profile.jpg" alt="Yash Jadhav" class="profile-pic" />
+    <h2>Building Scalable Intelligent Systems</h2>
+    <p>AI • Software Engineering • Data Analytics</p>
+    <div class="buttons">
+      <a href="#projects" class="btn">View Projects</a>
+      <a href="assets/Yash_Jadhav_Resume.pdf" class="btn" target="_blank">Download Resume</a>
     </div>
   </section>
 
-  <!-- 👨‍💻 About -->
-  <section id="about" class="py-20 container mx-auto px-6">
-    <h3 class="text-4xl font-bold text-cyan-400 mb-8">About Me</h3>
-    <p class="text-gray-300 leading-relaxed max-w-3xl">
-      Hello! I’m Yash Jadhav, a passionate Computer Science graduate student at Syracuse University specializing in software development, data science, and artificial intelligence.  
-      I thrive on solving complex problems and building efficient, creative, and scalable solutions that drive real-world impact.
+  <!-- ABOUT -->
+  <section id="about" class="content">
+    <h2>About Me</h2>
+    <p>
+      Hello! I’m Yash Jadhav, a passionate Computer Science graduate student at Syracuse University specializing in software development, data science, and artificial intelligence. I thrive on solving complex problems and building efficient, creative, and scalable solutions that drive real-world impact.
     </p>
-    <div class="grid sm:grid-cols-3 gap-6 mt-10">
-      <div class="p-6 border border-cyan-400/30 rounded-lg bg-white/5 text-center">🔹 Curious Learner</div>
-      <div class="p-6 border border-cyan-400/30 rounded-lg bg-white/5 text-center">🔹 Problem Solver</div>
-      <div class="p-6 border border-cyan-400/30 rounded-lg bg-white/5 text-center">🔹 Innovator at Heart</div>
-    </div>
-  </section>
-
-  <!-- 💼 Experience -->
-  <section id="experience" class="py-20 bg-[#0d0d14]">
-    <div class="container mx-auto px-6">
-      <h3 class="text-4xl font-bold text-cyan-400 mb-10">Experience</h3>
-      <div class="space-y-8">
-        <div class="border-l-4 border-cyan-400 pl-6">
-          <h4 class="text-2xl font-semibold">Graduate Research Assistant – Syracuse University</h4>
-          <p class="text-gray-400">May 2025 – Aug 2025 · On-site</p>
-          <p class="mt-2 text-gray-300">Advanced the ARIES compiler tool optimizing ML workloads on PIM architectures using MLIR & LLVM.</p>
-        </div>
-        <div class="border-l-4 border-cyan-400 pl-6">
-          <h4 class="text-2xl font-semibold">Data Science Researcher – NEXIS Lab</h4>
-          <p class="text-gray-400">Sep 2025 – Present · On-site</p>
-          <p class="mt-2 text-gray-300">Collaborating on ML-driven research projects using Python, scikit-learn and SQL for data insight generation.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 🚀 Projects -->
-  <section id="projects" class="py-20 container mx-auto px-6">
-    <h3 class="text-4xl font-bold text-cyan-400 mb-10">Featured Projects</h3>
-    <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
-      <!-- Project Card -->
-      <div class="bg-white/5 border border-cyan-400/20 rounded-xl p-6 hover:scale-105 transition-transform">
-        <h4 class="text-xl font-semibold text-cyan-300 mb-2">AI Resume Analyzer</h4>
-        <p class="text-gray-400 text-sm">NLP & TF-IDF based resume matcher built with Python and Streamlit.</p>
-        <div class="flex mt-4 space-x-3">
-          <a href="https://github.com/YashJadhav100/AI-Resume-Analyser" target="_blank" class="text-cyan-400 hover:underline">View Code</a>
-          <a href="#" class="text-gray-400 hover:text-cyan-300">Live Demo (coming soon)</a>
-        </div>
-      </div>
-
-      <div class="bg-white/5 border border-cyan-400/20 rounded-xl p-6 hover:scale-105 transition-transform">
-        <h4 class="text-xl font-semibold text-cyan-300 mb-2">Hospital Readmission Predictor</h4>
-        <p class="text-gray-400 text-sm">ML dashboard predicting patient readmission risk using Random Forest + Streamlit.</p>
-        <div class="flex mt-4 space-x-3">
-          <a href="https://github.com/YashJadhav100/Hospital-readmission" target="_blank" class="text-cyan-400 hover:underline">View Code</a>
-          <a href="#" class="text-gray-400 hover:text-cyan-300">Live Demo (coming soon)</a>
-        </div>
-      </div>
-
-      <div class="bg-white/5 border border-cyan-400/20 rounded-xl p-6 hover:scale-105 transition-transform">
-        <h4 class="text-xl font-semibold text-cyan-300 mb-2">Banking System (JavaFX)</h4>
-        <p class="text-gray-400 text-sm">OOP-based banking app simulating account management with Java and MySQL.</p>
-        <div class="flex mt-4 space-x-3">
-          <a href="https://github.com/YashJadhav100/Banking-System" target="_blank" class="text-cyan-400 hover:underline">View Code</a>
-          <a href="#" class="text-gray-400 hover:text-cyan-300">Live Demo (coming soon)</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 🧠 Skills -->
-  <section id="skills" class="py-20 bg-[#0d0d14]">
-    <div class="container mx-auto px-6">
-      <h3 class="text-4xl font-bold text-cyan-400 mb-10">Technical Skills</h3>
-      <div class="flex flex-wrap gap-4">
-        <span class="skill-tag">Java</span>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">JavaScript</span>
-        <span class="skill-tag">React JS</span>
-        <span class="skill-tag">Node JS</span>
-        <span class="skill-tag">SQL</span>
-        <span class="skill-tag">Git & GitHub</span>
-        <span class="skill-tag">Machine Learning</span>
-        <span class="skill-tag">Data Visualization</span>
-        <span class="skill-tag">Tailwind CSS</span>
-        <span class="skill-tag">Docker</span>
-        <span class="skill-tag">Flask</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- 🎓 Education -->
-  <section id="education" class="py-20 container mx-auto px-6">
-    <h3 class="text-4xl font-bold text-cyan-400 mb-10">Education & Transcripts</h3>
-    <ul class="space-y-6">
-      <li><strong>Syracuse University</strong> – M.S. Computer Science (2024–2026)</li>
-      <li><strong>Vidyalankar Institute of Technology</strong> – B.Tech E&TC + AI/ML Minor (2020–2024)</li>
+    <ul>
+      <li>Curious Learner – constantly exploring emerging technologies.</li>
+      <li>Problem Solver – crafting clean, scalable systems.</li>
+      <li>Innovator at Heart – driven by impact and efficiency.</li>
     </ul>
-    <div class="mt-8">
-      <a href="assets/FIRSTPAGE_CGPA_merged.pdf" target="_blank" class="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 rounded-lg text-black font-semibold mr-4">Download VIT Transcript</a>
-      <a href="assets/Transcripts-SPRING 2025.pdf" target="_blank" class="px-6 py-3 border border-cyan-400 rounded-lg font-semibold text-cyan-400 hover:bg-cyan-500/20">Download SU Transcript</a>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="content">
+    <h2>Experience</h2>
+
+    <div class="card">
+      <h3>Graduate Research Assistant – Syracuse University</h3>
+      <p><strong>May 2025 – Aug 2025 · On-site</strong></p>
+      <ul>
+        <li>Advanced the ARIES compiler tool optimizing ML workloads on PIM architectures using MLIR &amp; LLVM.</li>
+        <li>Adapted toolchain for hardware-specific code generation and sandbox testing on Ubuntu 20.04.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Data Science Researcher – NEXIS Lab</h3>
+      <p><strong>Sep 2025 – Present · On-site</strong></p>
+      <ul>
+        <li>Collaborating on ML-driven research using Python, scikit-learn and SQL for insight generation.</li>
+        <li>Applying EDA and data-driven modeling for academic projects and poster presentations.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Project Fellow – Chanakya Fellowship | TIH-IoT, IIT Bombay</h3>
+      <ul>
+        <li>Contributed to IoT research projects and hardware innovation initiatives within TIH-IoT.</li>
+        <li>Developed prototypes and project documentation for smart system applications.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Automation Developer – UiPath</h3>
+      <ul>
+        <li>Built end-to-end RPA workflows automating data entry and report generation using UiPath Studio.</li>
+        <li>Integrated bots with Orchestrator for scheduling and monitoring.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Frontend Developer – Oasis Infobyte</h3>
+      <ul>
+        <li>Developed responsive websites with HTML, CSS, JavaScript and Bootstrap enhancing UI engagement.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Coding Tutor – CodeKaroYaaro</h3>
+      <ul>
+        <li>Taught children basics of programming using Scratch, HTML, CSS and JavaScript.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Creative Head – ETSA VIT</h3>
+      <ul>
+        <li>Directed branding and visual identity for college technical events and campaigns.</li>
+      </ul>
     </div>
   </section>
 
-  <!-- ✉️ Contact -->
-  <section id="contact" class="py-20 bg-[#0d0d14] text-center">
-    <h3 class="text-4xl font-bold text-cyan-400 mb-6">Get in Touch</h3>
-    <p class="text-gray-400 mb-6">Let’s collaborate or discuss innovative ideas.</p>
-    <a href="mailto:yjadhav@syr.edu" class="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-black rounded-lg font-semibold">Email Me</a>
-    <div class="flex justify-center space-x-6 mt-8">
-      <a href="https://www.linkedin.com/in/yashvjadhav" target="_blank" class="hover:text-cyan-400">LinkedIn</a>
-      <a href="https://github.com/YashJadhav100" target="_blank" class="hover:text-cyan-400">GitHub</a>
+  <!-- PROJECTS -->
+  <section id="projects" class="content">
+    <h2>Featured Projects</h2>
+
+    <div class="project-grid">
+      <div class="proj-card">
+        <h3>🧠 AI Resume Analyzer</h3>
+        <p>NLP + TF-IDF based resume matcher built with Python and Streamlit.</p>
+        <a href="https://github.com/YashJadhav100/AI-Resume-Analyser" target="_blank">GitHub</a>
+      </div>
+
+      <div class="proj-card">
+        <h3>💬 Twitter Emotion Analysis</h3>
+        <p>Analyzes 2M+ tweets for 27 emotion categories using BERT and TF-IDF.</p>
+        <a href="https://github.com/YashJadhav100/Twitter-project" target="_blank">GitHub</a>
+      </div>
+
+      <div class="proj-card">
+        <h3>🏥 Hospital Readmission Predictor</h3>
+        <p>Streamlit app predicting readmission risk via SMOTE + Random Forest.</p>
+        <a href="https://github.com/YashJadhav100/Hospital-readmission" target="_blank">GitHub</a>
+      </div>
+
+      <div class="proj-card">
+        <h3>🏦 Banking System (Java)</h3>
+        <p>OOP-based console banking application with account creation and transactions.</p>
+        <a href="https://github.com/YashJadhav100/Banking-System" target="_blank">GitHub</a>
+      </div>
     </div>
   </section>
 
-  <footer class="py-6 text-center text-gray-500 border-t border-cyan-500/30">© 2025 Yash Jadhav · All Rights Reserved</footer>
-  <script src="script.js"></script>
+  <!-- SKILLS -->
+  <section id="skills" class="content">
+    <h2>Technical Skills</h2>
+    <div class="skill-grid">
+      <span>Python</span><span>Java</span><span>JavaScript</span><span>React.js</span>
+      <span>Node.js</span><span>SQL</span><span>MySQL</span><span>HTML5</span>
+      <span>CSS3</span><span>Bootstrap</span><span>Flask</span><span>Spring Boot</span>
+      <span>Git &amp; GitHub</span><span>UiPath RPA</span><span>Docker</span>
+      <span>Linux</span><span>Data Analytics</span><span>Machine Learning</span>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="content">
+    <h2>Education</h2>
+    <div class="card">
+      <h3>🎓 MS in Computer Science – Syracuse University (2024 – 2026)</h3>
+      <p>Relevant Courses: Data Mining, NLP, Database Systems, Operating Systems, Algorithms, AI.</p>
+      <a href="assets/Transcripts-SPRING 2025.pdf" class="btn" target="_blank">View Transcript</a>
+    </div>
+
+    <div class="card">
+      <h3>🎓 B.Tech in Electronics &amp; Telecommunication ( Minor in AI/ML ) – VIT Mumbai</h3>
+      <p>CGPA 8.7/10 · Chanakya Fellowship at IIT Bombay for IoT Innovation.</p>
+      <a href="assets/FIRSTPAGE_CGPA_merged.pdf" class="btn" target="_blank">View Transcript</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="content contact">
+    <h2>Contact</h2>
+    <p>Let’s connect — open to collaboration and opportunities.</p>
+    <div class="contact-links">
+      <a href="mailto:yjadhav@syr.edu">📧 yjadhav@syr.edu</a>
+      <a href="https://linkedin.com/in/yashvjadhav" target="_blank">🔗 LinkedIn</a>
+      <a href="https://github.com/YashJadhav100" target="_blank">💻 GitHub</a>
+    </div>
+  </section>
+
+  <footer>© 2025 Yash Jadhav · Built with ❤️ using HTML, CSS &amp; JS</footer>
 </body>
 </html>

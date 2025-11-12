@@ -1,112 +1,151 @@
-/* 🌌 Custom Portfolio Styles - Yash Jadhav */
-
-/* Neon Text Glow */
-.text-cyan-400 {
-  text-shadow: 0 0 10px rgba(34, 211, 238, 0.7), 0 0 20px rgba(34, 211, 238, 0.5);
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #0b0c10;
+  color: #f2f2f2;
+  scroll-behavior: smooth;
 }
 
-/* Smooth section fade-in */
-section {
-  scroll-margin-top: 100px;
-  animation: fadeIn 1s ease-in-out;
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(15, 15, 20, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  z-index: 1000;
 }
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.navbar h1 {
+  color: #00bcd4;
 }
-
-/* Navbar underline hover */
-nav ul li a {
-  position: relative;
+.navbar nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
   transition: color 0.3s;
 }
-nav ul li a::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: #22d3ee;
-  transition: width 0.3s;
-}
-nav ul li a:hover::after {
-  width: 100%;
+.navbar nav a:hover {
+  color: #00bcd4;
 }
 
-/* Skill Tags */
-.skill-tag {
-  background: rgba(34, 211, 238, 0.1);
-  border: 1px solid rgba(34, 211, 238, 0.4);
-  color: #22d3ee;
-  padding: 8px 14px;
+/* Home */
+.home {
+  text-align: center;
+  padding-top: 130px;
+  padding-bottom: 80px;
+}
+.profile-pic {
+  border-radius: 50%;
+  width: 180px;
+  border: 3px solid #00bcd4;
+  margin-bottom: 20px;
+}
+.btn {
+  background: #00bcd4;
+  color: #fff;
+  padding: 10px 25px;
+  margin: 10px;
   border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  transition: all 0.3s;
 }
-.skill-tag:hover {
-  background: rgba(34, 211, 238, 0.25);
-  transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+.btn:hover {
+  background: #0097a7;
+  transform: translateY(-3px);
 }
 
-/* Section spacing and backgrounds */
-section:nth-child(even) {
-  background: rgba(255, 255, 255, 0.02);
+/* Sections */
+.content {
+  padding: 100px 80px;
+  max-width: 1100px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+h2 {
+  color: #00bcd4;
+  border-bottom: 2px solid #00bcd4;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+ul {
+  line-height: 1.8em;
 }
 
-/* Project Cards */
-.project-card {
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(34, 211, 238, 0.2);
-  border-radius: 12px;
-  transition: transform 0.3s, box-shadow 0.3s;
+/* Cards */
+.card {
+  background: #101317;
+  padding: 20px 30px;
+  margin: 25px 0;
+  border-left: 4px solid #00bcd4;
+  border-radius: 8px;
 }
-.project-card:hover {
+.card h3 {
+  color: #00bcd4;
+}
+
+/* Project Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+.proj-card {
+  background: #11151a;
+  padding: 20px;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+.proj-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(34, 211, 238, 0.3);
+  background: #162027;
+}
+.proj-card a {
+  color: #00bcd4;
+  text-decoration: none;
 }
 
-/* Scrollbar Style */
-::-webkit-scrollbar {
-  width: 10px;
+/* Skills */
+.skill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #22d3ee, #3b82f6);
+.skill-grid span {
+  background: #11151a;
+  border: 1px solid #00bcd4;
+  padding: 8px 15px;
   border-radius: 6px;
+  transition: all 0.3s;
 }
-::-webkit-scrollbar-track {
-  background: #0a0a0f;
-}
-
-/* Button glow */
-button, a[class*="px-"] {
-  transition: all 0.3s ease;
-}
-button:hover, a[class*="px-"]:hover {
-  box-shadow: 0 0 12px rgba(34, 211, 238, 0.5);
+.skill-grid span:hover {
+  background: #00bcd4;
+  color: #000;
 }
 
-/* Fade-in effect for first section */
-#home {
-  animation: fadeInHome 1.5s ease-in-out;
+/* Contact */
+.contact-links a {
+  display: inline-block;
+  margin: 10px 20px;
+  color: #00bcd4;
+  text-decoration: none;
+}
+.contact-links a:hover {
+  text-decoration: underline;
 }
 
-@keyframes fadeInHome {
-  from {
-    opacity: 0;
-    transform: scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #111;
+  color: #999;
 }
