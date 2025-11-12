@@ -4,59 +4,51 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Yash Jadhav</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body class="bg-[#0a0a0f] text-white font-[Poppins] scroll-smooth">
-
-  <!-- Navbar -->
-  <header class="fixed w-full top-0 z-50 backdrop-blur-md bg-[#0a0a0f]/80 border-b border-cyan-500/30">
-    <nav class="container mx-auto flex justify-between items-center px-6 py-4">
-      <h1 class="text-2xl font-bold text-cyan-400">Yash Jadhav</h1>
-      <ul class="flex space-x-6 text-gray-300">
-        <li><a href="index.html" class="hover:text-cyan-400">Home</a></li>
-        <li><a href="about.html" class="hover:text-cyan-400">About</a></li>
-        <li><a href="projects.html" class="text-cyan-400">Projects</a></li>
-        <li><a href="contact.html" class="hover:text-cyan-400">Contact</a></li>
+<body>
+  <header class="navbar glass">
+    <div class="logo">YJ<span>.</span></div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="pt-32 container mx-auto px-6">
-    <h2 class="text-4xl font-bold text-cyan-400 mb-8">Projects Showcase</h2>
+  <section class="hero" data-aos="fade-up">
+    <h1>Projects</h1>
+    <p>Here’s a glimpse of what I’ve built — from AI and data science to automation and web engineering.</p>
+  </section>
 
-    <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
-      <!-- Each card matches your index.html style -->
-      <div class="project-card p-6 bg-white/5">
-        <h3 class="text-xl font-semibold text-cyan-300 mb-2">AI Resume Analyzer</h3>
-        <p class="text-gray-400 text-sm">NLP & TF-IDF based resume matcher built using Python and Streamlit.</p>
-        <div class="mt-4 flex space-x-3">
-          <a href="https://github.com/YashJadhav100/AI-Resume-Analyser" class="text-cyan-400 hover:underline" target="_blank">View Code</a>
-          <a href="#" class="text-gray-400 hover:text-cyan-300">Live Demo</a>
-        </div>
-      </div>
-
-      <div class="project-card p-6 bg-white/5">
-        <h3 class="text-xl font-semibold text-cyan-300 mb-2">Hospital Readmission Predictor</h3>
-        <p class="text-gray-400 text-sm">Machine learning model predicting patient readmission risk using Random Forest.</p>
-        <div class="mt-4 flex space-x-3">
-          <a href="https://github.com/YashJadhav100/Hospital-readmission" class="text-cyan-400 hover:underline" target="_blank">View Code</a>
-          <a href="#" class="text-gray-400 hover:text-cyan-300">Live Demo</a>
-        </div>
-      </div>
-
-      <div class="project-card p-6 bg-white/5">
-        <h3 class="text-xl font-semibold text-cyan-300 mb-2">Banking System</h3>
-        <p class="text-gray-400 text-sm">A JavaFX-based banking app showcasing OOP and database connectivity.</p>
-        <div class="mt-4 flex space-x-3">
-          <a href="https://github.com/YashJadhav100/Banking-System" class="text-cyan-400 hover:underline" target="_blank">View Code</a>
-          <a href="#" class="text-gray-400 hover:text-cyan-300">Live Demo</a>
-        </div>
-      </div>
+  <section class="facts" data-aos="fade-up">
+    <div class="fact-card">
+      <h3>AI Resume Analyzer</h3>
+      <p>Streamlit app comparing resumes & job descriptions using NLP.</p>
     </div>
-  </main>
+    <div class="fact-card">
+      <h3>Hospital Readmission Predictor</h3>
+      <p>ML model using RandomForest + SMOTE to predict readmission risks.</p>
+    </div>
+    <div class="fact-card">
+      <h3>Twitter Emotion Detection</h3>
+      <p>BERT-powered classifier analyzing 2M tweets with multi-emotion labels.</p>
+    </div>
+    <div class="fact-card">
+      <h3>Smart Automation Dashboard</h3>
+      <p>Python + UiPath integration for RPA and workflow management.</p>
+    </div>
+  </section>
 
-  <footer class="py-6 mt-16 text-center text-gray-500 border-t border-cyan-500/30">© 2025 Yash Jadhav · All Rights Reserved</footer>
+  <footer class="footer glass">
+    <p>© 2025 Yash Jadhav</p>
+  </footer>
   <script src="script.js"></script>
+  <script>AOS.init({ duration: 1000 });</script>
 </body>
 </html>
