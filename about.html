@@ -1,39 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Yash Jadhav</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="navbar">
-    <div class="logo">YJ.</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a class="active" href="about.html">About</a></li>
-      <li><a href="experience.html">Experience</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="education.html">Education</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </header>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About – Yash Jadhav</title>
 
-  <section class="about">
-    <div class="about-text">
-      <h2>Who is <span class="highlight">Yash Jadhav?</span></h2>
-      <p>I’m a Computer Science graduate student at Syracuse University specializing in software development, data science, and artificial intelligence. I’m passionate about building intelligent, efficient, and creative systems that make real-world impact.</p>
-      <ul>
-        <li>Curious Learner</li>
-        <li>Problem Solver</li>
-        <li>Innovator at Heart</li>
-      </ul>
-      <a href="assets/Yash_Jadhav_Resume.pdf" class="btn-primary" download>Download CV</a>
-    </div>
-    <div class="about-img">
-      <img src="assets/profile.jpg" alt="Yash Jadhav" />
-    </div>
-  </section>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <script defer src="script.js"></script>
+</head>
+
+<body class="fade-page">
+
+<div id="scroll-bar"></div>
+<div id="loader"><div class="spinner"></div></div>
+
+<nav class="navbar">
+  <div class="logo">YJ</div>
+
+  <ul class="nav-links">
+    <li><a href="index.html#home">Home</a></li>
+    <li><a class="active" href="about.html">About</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="contact.html">Contact</a></li>
+
+    <li>
+      <a href="assets/Yash_Jadhav_Resume.pdf"
+         class="resume-btn"
+         target="_blank"
+         rel="noopener">
+        <i class="fa-solid fa-file-arrow-down"></i> Resume
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<section class="page visible">
+  <h2 class="page-title">About Me</h2>
+
+  <div class="card">
+    <p>
+      I'm <strong>Yash Jadhav</strong>, a Computer Science graduate student at Syracuse University
+      specializing in <strong>AI/ML Systems, Compiler Engineering, Automation, and Full-Stack Development</strong>.
+    </p><br>
+
+    <p>
+      Currently, I work as a <strong>Graduate Research Assistant</strong> on the ARIES MLIR Compiler,
+      developing MLIR lowering passes, tensor broadcast logic, and compute-to-memory operations
+      optimized for AMD Versal VCK190.
+    </p><br>
+
+    <p><strong>I have strong experience in:</strong></p>
+    <ul>
+      <li>MLIR compiler design & intermediate representations</li>
+      <li>AI/ML pipelines, NLP, model training & explainability</li>
+      <li>UiPath RPA automation systems</li>
+      <li>Backend engineering (Node.js, Flask, SQL)</li>
+      <li>Frontend engineering (React.js, Tailwind)</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="socials">
+    <a href="https://linkedin.com/in/yashvjadhav"
+       target="_blank" rel="noopener">
+       <i class="fa-brands fa-linkedin"></i> LinkedIn
+    </a>
+
+    <a href="https://github.com/YashJadhav100"
+       target="_blank" rel="noopener">
+       <i class="fa-brands fa-github"></i> GitHub
+    </a>
+  </div>
+
+  <p>© 2025 Yash Jadhav</p>
+</footer>
+
 </body>
 </html>

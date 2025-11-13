@@ -1,34 +1,109 @@
-<body>
-  <nav class="navbar">
-    <div class="logo">YJ.</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="experience.html">Experience</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="education.html">Education</a></li>
-      <li><a class="active" href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – Yash Jadhav</title>
 
-  <section class="contact-section">
-    <div class="contact-container">
-      <h2>Let’s Connect</h2>
-      <p>If you’d like to discuss opportunities, collaborations, or projects — drop me a message below!</p>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn-primary">Send Message</button>
-      </form>
+  <script defer src="script.js"></script>
+</head>
 
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/yashvjadhav" target="_blank">LinkedIn</a>
-        <a href="https://github.com/YashJadhav100" target="_blank">GitHub</a>
-        <a href="mailto:yjadhav@syr.edu">Email</a>
-      </div>
-    </div>
-  </section>
+<body class="fade-page">
+
+<div id="scroll-bar"></div>
+<div id="loader"><div class="spinner"></div></div>
+
+<nav class="navbar">
+  <div class="logo">YJ</div>
+
+  <ul class="nav-links">
+    <li><a href="index.html#home">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a class="active" href="contact.html">Contact</a></li>
+
+    <li>
+      <a href="assets/Yash_Jadhav_Resume.pdf"
+         class="resume-btn"
+         target="_blank"
+         rel="noopener">
+         <i class="fa-solid fa-file-arrow-down"></i> Resume
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
+<section class="page visible">
+  <h2 class="page-title">Contact</h2>
+
+  <div class="card" style="padding: 35px;">
+
+    <p style="font-size: 1.2rem; margin-bottom: 20px;">
+      I’m always excited to collaborate and explore new opportunities in 
+      <strong>AI/ML, NLP, Automation, Backend Engineering, and Full-Stack Development</strong>.
+      Let's connect!
+    </p>
+
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:yjadhav@syr.edu">yjadhav@syr.edu</a>
+    </p>
+
+    <p>
+      <strong>LinkedIn:</strong>
+      <a href="https://linkedin.com/in/yashvjadhav"
+         target="_blank"
+         rel="noopener">
+         <i class="fa-brands fa-linkedin"></i> linkedin.com/in/yashvjadhav
+      </a>
+    </p>
+
+    <p>
+      <strong>GitHub:</strong>
+      <a href="https://github.com/YashJadhav100"
+         target="_blank"
+         rel="noopener">
+         <i class="fa-brands fa-github"></i> github.com/YashJadhav100
+      </a>
+    </p>
+
+    <br>
+
+    <a href="assets/Yash_Jadhav_Resume.pdf"
+       class="resume-btn"
+       target="_blank"
+       rel="noopener">
+       <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+    </a>
+
+  </div>
+</section>
+
+
+<footer>
+  <div class="socials">
+    <a href="https://linkedin.com/in/yashvjadhav"
+       target="_blank" rel="noopener">
+       <i class="fa-brands fa-linkedin"></i> LinkedIn
+    </a>
+
+    <a href="https://github.com/YashJadhav100"
+       target="_blank" rel="noopener">
+       <i class="fa-brands fa-github"></i> GitHub
+    </a>
+  </div>
+
+  <p>© 2025 Yash Jadhav</p>
+</footer>
+
 </body>
+</html>

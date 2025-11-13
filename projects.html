@@ -3,50 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects | Yash Jadhav</title>
+  <title>Projects – Yash Jadhav</title>
+
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <script defer src="script.js"></script>
 </head>
-<body>
-  <nav class="navbar">
-    <div class="logo">YJ.</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="experience.html">Experience</a></li>
-      <li><a class="active" href="projects.html">Projects</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="education.html">Education</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
 
-  <section class="projects">
-    <h2>Featured Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>AI-Powered Resume Analyzer</h3>
-        <p>Built using Python and Streamlit, this app analyzes resumes using TF-IDF + NLP to find job relevance scores.</p>
-        <a href="#" class="btn-primary">Live Demo</a>
-      </div>
+<body class="fade-page">
 
-      <div class="project-card">
-        <h3>Smart Automation Dashboard</h3>
-        <p>Integrated UiPath bots with Flask + React to automate workflows and visualize bot performance metrics.</p>
-        <a href="#" class="btn-primary">Live Demo</a>
-      </div>
+<div id="scroll-bar"></div>
+<div id="loader"><div class="spinner"></div></div>
 
-      <div class="project-card">
-        <h3>Real-Time Fake Job Detector</h3>
-        <p>AI-based system that identifies fraudulent job postings using RandomForest and SHAP explainability.</p>
-        <a href="#" class="btn-primary">Live Demo</a>
-      </div>
+<nav class="navbar">
+  <div class="logo">YJ</div>
 
-      <div class="project-card">
-        <h3>Banking System (JavaFX + MySQL)</h3>
-        <p>Developed a secure JavaFX desktop app simulating real banking operations connected to a live database.</p>
-        <a href="#" class="btn-primary">Live Demo</a>
-      </div>
+  <ul class="nav-links">
+    <li><a href="index.html#home">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a class="active" href="projects.html">Projects</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="contact.html">Contact</a></li>
+
+    <li>
+      <a href="assets/Yash_Jadhav_Resume.pdf"
+         class="resume-btn"
+         target="_blank" rel="noopener">
+         <i class="fa-solid fa-file-arrow-down"></i> Resume
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<section class="page visible">
+  <h2 class="page-title">Projects</h2>
+
+  <div class="grid">
+
+    <div class="card project">
+      <h3>AI-Powered Resume Analyzer</h3>
+      <p class="tag">Python • NLP • Streamlit</p>
+      <p>
+        Built a system that compares resumes with job descriptions using TF-IDF,
+        cosine similarity, and NLP keyword extraction.
+      </p>
     </div>
-  </section>
+
+    <div class="card project">
+      <h3>Fake Job Detector</h3>
+      <p class="tag">ML • NLP • SHAP</p>
+      <p>
+        Machine learning classifier predicting real vs fake job listings with 
+        SHAP explainability visualizations.
+      </p>
+    </div>
+
+    <div class="card project">
+      <h3>Smart Automation Dashboard</h3>
+      <p class="tag">UiPath • Flask</p>
+      <p>
+        A dashboard to trigger bots, check logs, and monitor automation tasks end-to-end.
+      </p>
+    </div>
+
+    <div class="card project">
+      <h3>Banking System</h3>
+      <p class="tag">Java • MySQL</p>
+      <p>
+        A functional banking simulation with login, transaction handling, and database integration.
+      </p>
+    </div>
+
+    <div class="card project">
+      <h3>Library Management System</h3>
+      <p class="tag">Java • OOP</p>
+      <p>
+        Full system handling book records, fines, user accounts, and admin modules.
+      </p>
+    </div>
+
+    <div class="card project">
+      <h3>YouTube Clone UI</h3>
+      <p class="tag">HTML • CSS • JS</p>
+      <p>
+        A clean, responsive clone of YouTube’s homepage.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="socials">
+    <a href="https://linkedin.com/in/yashvjadhav" target="_blank" rel="noopener">
+      <i class="fa-brands fa-linkedin"></i> LinkedIn
+    </a>
+    <a href="https://github.com/YashJadhav100" target="_blank" rel="noopener">
+      <i class="fa-brands fa-github"></i> GitHub
+    </a>
+  </div>
+  <p>© 2025 Yash Jadhav</p>
+</footer>
+
 </body>
 </html>

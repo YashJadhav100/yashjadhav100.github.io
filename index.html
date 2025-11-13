@@ -1,42 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yash Jadhav | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <nav class="navbar">
-    <div class="logo">YJ.</div>
-    <ul>
-      <li><a class="active" href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="experience.html">Experience</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="education.html">Education</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yash Jadhav – Portfolio</title>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h4>Hello There 👋</h4>
-      <h1>I’m <span class="highlight">Yash Jadhav</span></h1>
-      <h2>Building Scalable Intelligent Systems</h2>
-      <p>AI • Software Engineering • Data Analytics</p>
-      <div class="hero-buttons">
-        <a href="projects.html" class="btn-primary">View Projects</a>
-        <a href="assets/Yash_Jadhav_Resume.pdf" class="btn-outline" download>Download Resume</a>
-      </div>
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- JS -->
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+
+<!-- SCROLL BAR -->
+<div id="scroll-bar"></div>
+
+<!-- PAGE LOADER -->
+<div id="loader"><div class="spinner"></div></div>
+
+<audio id="hover-sound"
+       src="https://assets.mixkit.co/sfx/preview/mixkit-click-error-1110.mp3"></audio>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">YJ</div>
+
+  <ul class="nav-links">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="#contact">Contact</a></li>
+
+    <li>
+      <a href="assets/Yash_Jadhav_Resume.pdf"
+         class="resume-btn"
+         target="_blank"
+         rel="noopener">
+        <i class="fa-solid fa-file-arrow-down"></i> Resume
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero page visible">
+  <h1>Hi, I'm <span>Yash Jadhav</span></h1>
+
+  <p style="margin-top: 15px; font-size: 1.3rem;">
+    AI/ML • Compiler Engineering • Automation • Full-Stack Development
+  </p>
+</section>
+
+<!-- ABOUT PREVIEW -->
+<section id="about" class="page">
+  <h2 class="page-title">About Me</h2>
+
+  <div class="card">
+    <p>
+      I'm a Computer Science graduate student at Syracuse University specializing
+      in <strong>AI/ML Systems, Compiler Engineering, Automation, and Full-Stack Development</strong>.
+    </p><br>
+
+    <p>
+      Currently, I work as a <strong>Graduate Research Assistant</strong> on the
+      <strong>ARIES MLIR Compiler</strong>, building tensor lowering passes and
+      compute-to-memory transformations for AMD Versal VCK190.
+    </p><br>
+
+    <p><strong>Core strengths:</strong></p>
+    <ul>
+      <li>MLIR compiler development</li>
+      <li>AI/ML & NLP pipelines</li>
+      <li>Automation (UiPath)</li>
+      <li>Backend engineering</li>
+      <li>Modern frontend engineering</li>
+    </ul>
+  </div>
+</section>
+
+<!-- EXPERIENCE PREVIEW -->
+<section id="experience" class="page">
+  <h2 class="page-title">Experience</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item card">
+      <h3>Graduate Research Assistant – Syracuse University</h3>
+      <p class="time">2024 – Present</p>
+      <ul>
+        <li>MLIR compiler development for PIM ML acceleration</li>
+        <li>Tensor broadcast + lowering design</li>
+        <li>Integrated flows for AMD Versal VCK190</li>
+      </ul>
     </div>
-    <div class="hero-image">
-      <img src="assets/profile.jpg" alt="Yash Jadhav" />
-      <div class="blob"></div>
+
+    <div class="timeline-item card">
+      <h3>Automation Developer – UiPath</h3>
+      <p class="time">2023</p>
+      <ul>
+        <li>Enterprise-grade RPA workflows</li>
+        <li>Python + Excel automation</li>
+      </ul>
     </div>
-  </section>
+
+    <div class="timeline-item card">
+      <h3>Project Fellow – IIT Bombay</h3>
+      <p class="time">2022 – 2023</p>
+      <ul>
+        <li>IoT automation systems engineering</li>
+        <li>Chanakya Fellowship recipient</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS PREVIEW -->
+<section id="skills" class="page">
+  <h2 class="page-title">Skills</h2>
+
+  <div class="grid">
+
+    <div class="skill-bar card">
+      <h3>Programming</h3>
+      <div class="bar"><span style="width: 95%;"></span></div>
+      <p>Java, Python, JavaScript, C, Golang, SQL</p>
+    </div>
+
+    <div class="skill-bar card">
+      <h3>Frontend</h3>
+      <div class="bar"><span style="width: 90%;"></span></div>
+      <p>React.js, HTML, CSS, Tailwind</p>
+    </div>
+
+    <div class="skill-bar card">
+      <h3>Backend</h3>
+      <div class="bar"><span style="width: 85%;"></span></div>
+      <p>Node.js, Express.js, Flask, Spring Boot</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS PREVIEW -->
+<section id="projects" class="page">
+  <h2 class="page-title">Projects</h2>
+
+  <div class="grid">
+
+    <div class="card project">
+      <h3>AI-Powered Resume Analyzer</h3>
+      <p class="tag">Python • NLP • Streamlit</p>
+      <p>Matches resumes to job descriptions using TF-IDF + NLP.</p>
+    </div>
+
+    <div class="card project">
+      <h3>Smart Automation Dashboard</h3>
+      <p class="tag">UiPath • Flask</p>
+      <p>Automation control panel for executing bots & viewing logs.</p>
+    </div>
+
+    <div class="card project">
+      <h3>Fake Job Detector</h3>
+      <p class="tag">ML • NLP</p>
+      <p>Identifies scam job listings with ML and SHAP explainability.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ⭐ STATS SECTION (RESTORED EXACTLY AS YOU WANTED) -->
+<section id="stats" class="stats page">
+  <h2 class="page-title">My Numbers</h2>
+
+  <div class="grid">
+
+    <div class="stat card">
+      <h1 data-target="20">0</h1>
+      <p>Projects Completed</p>
+    </div>
+
+    <div class="stat card">
+      <h1 data-target="6">0</h1>
+      <p>Tech Domains Worked In</p>
+    </div>
+
+    <div class="stat card">
+      <h1 data-target="4">0</h1>
+      <p>Internships & Fellowships</p>
+    </div>
+
+    <div class="stat card">
+      <h1 data-target="7">0</h1>
+      <p>Major Skills Mastered</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="page">
+  <h2 class="page-title">Contact</h2>
+
+  <div class="card" style="padding: 35px;">
+    <p style="font-size: 1.2rem; margin-bottom: 20px;">
+      Let's connect — I'm open to roles in AI/ML, Automation, Backend, and Full-Stack Engineering.
+    </p>
+
+    <p><strong>Email:</strong> <a href="mailto:yjadhav@syr.edu">yjadhav@syr.edu</a></p>
+
+    <p>
+      <strong>LinkedIn:</strong>
+      <a href="https://linkedin.com/in/yashvjadhav" target="_blank" rel="noopener">
+        <i class="fa-brands fa-linkedin"></i> linkedin.com/in/yashvjadhav
+      </a>
+    </p>
+
+    <p>
+      <strong>GitHub:</strong>
+      <a href="https://github.com/YashJadhav100" target="_blank" rel="noopener">
+        <i class="fa-brands fa-github"></i> github.com/YashJadhav100
+      </a>
+    </p>
+
+    <br>
+
+    <a href="assets/Yash_Jadhav_Resume.pdf"
+       class="resume-btn"
+       target="_blank"
+       rel="noopener">
+      <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="socials">
+    <a href="https://linkedin.com/in/yashvjadhav" target="_blank" rel="noopener">
+      <i class="fa-brands fa-linkedin"></i> LinkedIn
+    </a>
+
+    <a href="https://github.com/YashJadhav100" target="_blank" rel="noopener">
+      <i class="fa-brands fa-github"></i> GitHub
+    </a>
+  </div>
+
+  <p>© 2025 Yash Jadhav</p>
+</footer>
+
 </body>
 </html>
