@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,91 +8,163 @@
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <script defer src="script.js"></script>
 </head>
 
-<body class="fade-page">
+<body>
 
-<div id="scroll-bar"></div>
-<div id="loader"><div class="spinner"></div></div>
+  <div id="scroll-bar"></div>
+  <div id="loader"><div class="spinner"></div></div>
 
-<nav class="navbar">
-  <div class="logo">YJ</div>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">YJ</div>
 
-  <ul class="nav-links">
-    <li><a href="index.html#home">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a class="active" href="experience.html">Experience</a></li>
-    <li><a href="education.html">Education</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="skills.html">Skills</a></li>
-    <li><a href="certifications.html">Certifications</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <ul class="nav-links">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="experience.html" class="active">Experience</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="contact.html">Contact</a></li>
 
-    <li>
-      <a href="assets/Yash_Jadhav_Resume.pdf"
-         class="resume-btn"
-         target="_blank"
-         rel="noopener">
-        <i class="fa-solid fa-file-arrow-down"></i> Resume
-      </a>
-    </li>
-  </ul>
-</nav>
+      <li>
+        <a href="assets/Yash_Jadhav_Resume.pdf" class="resume-btn" target="_blank">
+          <i class="fa-solid fa-file-arrow-down"></i> Resume
+        </a>
+      </li>
+    </ul>
+  </nav>
 
-<section class="page visible">
-  <h2 class="page-title">Experience</h2>
+  <!-- MOBILE NAV -->
+  <div class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></div>
 
-  <div class="timeline">
+  <div class="mobile-nav">
+    <a href="index.html#home">Home</a>
+    <a href="about.html">About</a>
+    <a href="experience.html" class="active">Experience</a>
+    <a href="education.html">Education</a>
+    <a href="projects.html">Projects</a>
+    <a href="skills.html">Skills</a>
+    <a href="certifications.html">Certifications</a>
+    <a href="contact.html">Contact</a>
 
-    <div class="timeline-item card">
-      <h3>Graduate Research Assistant – Syracuse University</h3>
-      <p class="time">2024 – Present</p>
-      <ul>
-        <li>Develop MLIR transformations for PIM-based ML acceleration.</li>
-        <li>Designed tensor broadcast and compute-to-memory lowering passes.</li>
-        <li>Integrated flows for AMD Versal VCK190 + Vitis environment.</li>
-      </ul>
-    </div>
-
-    <div class="timeline-item card">
-      <h3>Automation Developer – UiPath</h3>
-      <p class="time">2023</p>
-      <ul>
-        <li>Created enterprise-grade RPA workflows.</li>
-        <li>Python-based automation + Excel processing.</li>
-      </ul>
-    </div>
-
-    <div class="timeline-item card">
-      <h3>Project Fellow – IIT Bombay (TIH-IoT)</h3>
-      <p class="time">2022 – 2023</p>
-      <ul>
-        <li>IoT automation + real-time systems.</li>
-        <li>Recipient of the prestigious Chanakya Fellowship.</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<footer>
-  <div class="socials">
-    <a href="https://linkedin.com/in/yashvjadhav"
-       target="_blank" rel="noopener">
-       <i class="fa-brands fa-linkedin"></i> LinkedIn
-    </a>
-
-    <a href="https://github.com/YashJadhav100"
-       target="_blank" rel="noopener">
-       <i class="fa-brands fa-github"></i> GitHub
+    <a href="assets/Yash_Jadhav_Resume.pdf" class="resume-btn" target="_blank">
+      <i class="fa-solid fa-file-arrow-down"></i> Resume
     </a>
   </div>
 
-  <p>© 2025 Yash Jadhav</p>
-</footer>
+  <!-- EXPERIENCE SECTION -->
+  <section class="page visible">
+    <h2 class="page-title">Experience</h2>
+
+    <div class="timeline">
+
+      <!-- NEXIS LAB -->
+      <div class="timeline-item card">
+        <h3>Data Science Researcher – NEXIS Student Technology Lab</h3>
+        <p class="time">Sep 2025 – Present</p><br>
+        <ul>
+          <li>Working in an interdisciplinary tech lab to design and develop data-driven solutions.</li>
+          <li>Applying ML, analytics, and statistical modeling to extract insights from real-world datasets.</li>
+          <li>Conducting data preprocessing, exploratory analysis, and model building using Python, pandas, NumPy, and scikit-learn.</li>
+          <li>Participating in weekly research discussions and team development sessions to drive project progress.</li>
+          <li>Preparing findings for poster sessions and research showcases.</li>
+        </ul><br>
+        <p><strong>Skills:</strong> Python, SQL, Pandas, NumPy, Scikit-Learn, Data Visualization, EDA, Data Cleaning</p>
+      </div>
+
+      <!-- GRAD RESEARCH ASSISTANT -->
+      <div class="timeline-item card">
+        <h3>Graduate Research Assistant – Syracuse University</h3>
+        <p class="time">May 2025 – Aug 2025</p><br>
+        <ul>
+          <li>Contributed to the ARIES compiler toolchain focused on ML workloads over PIM architectures.</li>
+          <li>Adapted compiler flows for hardware-specific code generation and performance optimization.</li>
+          <li>Set up isolated Linux development environments using Ubuntu and VMware for MLIR experimentation.</li>
+          <li>Gained experience with MLIR, LLVM, IR transformations, and FPGA-based acceleration.</li>
+        </ul><br>
+        <p><strong>Skills:</strong> MLIR, LLVM, C++, FPGA Concepts, Linux, Shell Scripting, GitHub, Ubuntu</p>
+      </div>
+
+      <!-- CHANAKYA FELLOWSHIP -->
+      <div class="timeline-item card">
+        <h3>Project Fellow – Chanakya Fellowship, TIH-IoT, IIT Bombay</h3>
+        <p class="time">Apr 2023 – Jan 2024</p><br>
+        <ul>
+          <li>Awarded the prestigious Chanakya Fellowship under TIH-IoT for excellence in engineering innovation.</li>
+          <li>Worked on IoT-centered projects involving research, prototyping, and system design.</li>
+          <li>Collaborated with interdisciplinary teams to develop scalable IoT solutions.</li>
+        </ul><br>
+        <p><strong>Skills:</strong> IoT Systems, Research Workflows, Project Management, SketchUp, Documentation</p>
+      </div>
+
+      <!-- ETSA CREATIVE HEAD -->
+      <div class="timeline-item card">
+        <h3>Creative Head – ETSA VIT</h3>
+        <p class="time">Jun 2022 – Jul 2023</p><br>
+        <ul>
+          <li>Designed branding, visual identity, and promotional creatives for departmental events.</li>
+          <li>Led creative strategy, concept development, and design direction for student engagement activities.</li>
+          <li>Collaborated with technical and event teams to deliver seamless workshop experiences.</li>
+        </ul><br>
+        <p><strong>Skills:</strong> Art Direction, Canva, Picsart, Visual Design, Creative Management</p>
+      </div>
+
+      <!-- CODING TUTOR -->
+      <div class="timeline-item card">
+        <h3>Coding Tutor – CodeKaroYaaro</h3>
+        <p class="time">Mar 2023 – Jun 2023</p><br>
+        <ul>
+          <li>Taught foundational programming to young students using Scratch, Code.org, HTML, CSS, and JavaScript.</li>
+          <li>Built interactive, age-friendly lessons that encouraged computational thinking and creativity.</li>
+        </ul><br>
+        <p><strong>Skills:</strong> Teaching, Scratch, HTML, CSS, JavaScript, Lesson Planning, Programming Concepts, Frontend Basics, Curriculum Design</p>
+      </div>
+
+      <!-- OASIS INFOBYTE -->
+      <div class="timeline-item card">
+        <h3>Frontend Developer Intern – Oasis Infobyte</h3>
+        <p class="time">Mar 2023 – Apr 2023</p><br>
+        <ul>
+          <li>Developed responsive web pages using HTML, CSS, JavaScript, and Bootstrap.</li>
+          <li>Participated in UI/UX design, wireframing, and implementing interactive components.</li>
+          <li>Followed mobile-first and accessibility-first design principles.</li>
+        </ul><br>
+        <p><strong>Skills:</strong> HTML, CSS, JavaScript, Bootstrap, Responsive Design, UI/UX Principles, Git</p>
+      </div>
+
+      <!-- UIPATH -->
+      <div class="timeline-item card">
+        <h3>Automation Developer Intern – Vidyalankar Institute of Technology</h3>
+        <p class="time">Dec 2022 – Mar 2023</p><br>
+        <ul>
+          <li>Designed and implemented end-to-end RPA workflows using UiPath Studio.</li>
+          <li>Used UiPath Orchestrator for scheduling, deployment, and monitoring of automation bots.</li>
+          <li>Built automation pipelines that improved process efficiency and reduced manual load.</li>
+        </ul><br>
+        <p><strong>Skills:</strong> UiPath Studio, RPA Development, Orchestrator, Workflow Design, Process Automation, Automation Design</p>
+      </div>
+
+      <!-- DOORDARSHAN -->
+      <div class="timeline-item card">
+        <h3>Telecommunications Assistant – Doordarshan Kendra, Mumbai</h3>
+        <p class="time">Jun 2022 – Jul 2022</p><br>
+        <ul>
+          <li>Assisted broadcast engineers with signal transmission and studio operations.</li>
+          <li>Learned broadcasting workflows, transmission protocols, and audio-visual chain management.</li>
+        </ul><br>
+        <p><strong>Skills:</strong> Broadcasting Concepts, Signal Transmission, Studio Operations, Team Collaboration, Telecommunications, Broadcasting Systems, Signal Monitoring</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer><p>© 2025 Yash Jadhav</p></footer>
 
 </body>
 </html>
