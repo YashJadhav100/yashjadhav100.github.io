@@ -31,6 +31,6 @@ Features
 
 Maintainer
   Yash V. Jadhav
-  Graduate Student, MS CS — Syracuse University
+  Graduate Student, MS CS - Syracuse University
   yjadhav@syr.edu
   LinkedIn: https://linkedin.com/in/yashvjadhav
