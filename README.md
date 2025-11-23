@@ -18,16 +18,18 @@ A clean and responsive personal portfolio built using **HTML**, **CSS**, and **J
 ---
 
 ## 📁 Project Structure
-assets/
-index.html
-about.html
-projects.html
-skills.html
-experience.html
-education.html
-contact.html
-script.js
-style.css
+
+    assets/
+    index.html
+    about.html
+    projects.html
+    skills.html
+    experience.html
+    education.html
+    contact.html
+    script.js
+    style.css
+
 
 
 ---
