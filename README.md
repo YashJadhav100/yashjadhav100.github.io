@@ -53,7 +53,7 @@ To run this portfolio locally or customize it for your own use:
 
 ## 📬 Contact
 
-I am actively seeking **Summer 2025 Co-ops** and **Full-time 2026** opportunities.
+I am actively seeking **Spring 2026 Co-ops/Internships** and **Full-time 2026** opportunities.
 
 * **Email:** [yjadhav@syr.edu](mailto:yjadhav@syr.edu)
 * **LinkedIn:** [linkedin.com/in/yashvjadhav](https://linkedin.com/in/yashvjadhav)
