@@ -1,115 +1,63 @@
-```markdown
-# 🚀 Yash Jadhav - Data Science & Systems Engineer Portfolio
+# 🚀 Yash Jadhav | Portfolio Website
 
-A modern, high-performance, single-page portfolio website built to showcase a career in Data Science, AI/ML, and Systems Engineering. This project features a responsive dark-themed design with glassmorphism effects, interactive animations, and a focus on content accessibility.
+A high-performance, single-page personal portfolio designed to showcase a career at the intersection of **Data Science**, **Machine Learning**, and **Systems Engineering**. 
 
-🔗 **Live Demo:** [yashjadhav100.github.io](https://yashjadhav100.github.io) *(Replace with your actual link if different)*
+This project serves as a central hub for my technical work, moving beyond traditional resume formats to offer an interactive, visual representation of my capabilities in building scalable systems and predictive models.
 
-## ✨ Features
+🔗 **Live Demo:** [yashjadhav100.github.io](https://yashjadhav100.github.io)
 
-* **🎨 Modern UI/UX:** Dark mode aesthetic with "Glassmorphism" cards and a dynamic background grid.
-* **⚡ Tailwind CSS:** Styled using the Tailwind CLI (via CDN for simplicity) with custom color configurations.
-* **🔦 Spotlight Effect:** Interactive mouse-tracking spotlight hover effects on project and education cards.
-* **📂 Project Filtering:** JavaScript-based filtering system to toggle between AI/Data, Full Stack, and Automation projects.
-* **📱 Fully Responsive:** Optimized layout for desktops, tablets, and mobile devices with a custom mobile navigation menu.
-* **✨ Custom Animations:**
-    * Infinite scrolling tech stack banner.
-    * Floating background "blobs".
-    * Smooth scroll navigation.
-    * Fade-in entrance animations.
+## 🎯 Motivation: Why I Built This
 
-## 🛠️ Tech Stack
+As a Master’s student in Computer Science with a diverse background ranging from Electronics to Full Stack Development, I needed a platform that could:
 
-* **Core:** HTML5, CSS3, Vanilla JavaScript.
-* **Styling:** [Tailwind CSS](https://tailwindcss.com/) (via CDN).
-* **Icons:** [FontAwesome 6](https://fontawesome.com/).
-* **Typography:** [Google Fonts](https://fonts.google.com/) (Inter, Space Grotesk, JetBrains Mono).
+1.  **Demonstrate "Full Stack" Proficiency:** I didn't just want to *claim* I know frontend development; I wanted to *prove* it by building a portfolio from scratch without relying on heavy frameworks like React or Angular for a static site.
+2.  **Highlight Interdisciplinary Skills:** My work spans low-level compiler optimization (MLIR/LLVM), high-level data science (Python/Pandas), and web engineering. This portfolio allows me to categorize and present these distinct skill sets cohesively.
+3.  **Showcase Engineering Standards:** By focusing on performance (high Lighthouse scores), accessibility, and responsive design, this project reflects the engineering standards I bring to professional roles.
 
-## 📂 Project Structure
+## 🏗️ Technical Architecture
 
-The project is contained within a single file structure for ease of deployment:
+The philosophy behind this project was **"Complexity in Design, Simplicity in Code."**
 
-```text
-/
-├── index.html          # Main portfolio file containing HTML, CSS, and JS
-├── assets/
-│   └── Yash_Jadhav_Resume.pdf  # Your resume file linked in the nav
-└── README.md           # Project documentation
+* **No Heavy Frameworks:** Built using **Vanilla JavaScript** and **HTML5**. This ensures lightning-fast load times and zero build-step complexity.
+* **Utility-First Styling:** Leveraged **Tailwind CSS** for rapid UI development, maintaining a consistent design system (colors, spacing, typography) without writing thousands of lines of custom CSS.
+* **Interactive DOM Manipulation:** Features like the **Spotlight Effect** and **Project Filtering** are implemented with raw DOM manipulation, demonstrating a strong grasp of core browser APIs.
 
-```
+## ✨ Key Features
+
+* **Dynamic Filtering System:** A custom JavaScript filter allows recruiters to instantly toggle between **AI/Data Science** projects and **Web/System** engineering projects, tailoring the view to their hiring needs.
+* **Interactive "Spotlight" UI:** A mouse-tracking radial gradient effect on cards that adds depth and interactivity, enhancing the dark-mode aesthetic.
+* **Responsive & Adaptive:** A mobile-first architecture that scales seamlessly from 4k monitors down to mobile devices, featuring a custom collapsible navigation menu.
+* **Glassmorphism Aesthetic:** Utilizes backdrop-blur and semi-transparent borders to create a modern, layered visual hierarchy.
+
+## 📂 Project Highlights
+
+This portfolio hosts a curated list of over 20+ projects, moving away from simple automation scripts to complex engineering challenges:
+
+* **AI & Data Science:** Includes an **AI Resume Analyzer** (NLP/TF-IDF), **Fake Job Detector** (Classification/SHAP), and **Hospital Readmission Predictors**, showcasing end-to-end ML pipelines.
+* **Systems & Web:** Features a robust **E-Commerce Platform** (MERN Stack) and a **Smart Bot Dashboard** (Flask), demonstrating full-stack scalability.
+* **Interactive Logic:** Includes a **Rock-Paper-Scissors Game**, serving as a fun demonstration of state management and DOM interaction in pure JavaScript.
 
 ## 🚀 Getting Started
 
-### Prerequisites
+To run this portfolio locally or customize it for your own use:
 
-You do not need to install Node.js or any build tools. This project runs directly in the browser.
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/YashJadhav100/yashjadhav100.github.io.git](https://github.com/YashJadhav100/yashjadhav100.github.io.git)
+    ```
+2.  **Open the application:**
+    Since this project uses no build tools, simply open `index.html` in any modern web browser.
+3.  **Customize:**
+    * Update `assets/Yash_Jadhav_Resume.pdf` with your own document.
+    * Modify the `tailwind.config` script in the `<head>` to change the color scheme.
 
-### Installation
+## 📬 Contact
 
-1. **Clone the repository:**
-```bash
-git clone [https://github.com/YashJadhav100/yashjadhav100.github.io.git](https://github.com/YashJadhav100/yashjadhav100.github.io.git)
+I am actively seeking **Summer 2025 Co-ops** and **Full-time 2026** opportunities.
 
-```
-
-
-2. **Open the file:**
-Simply double-click `index.html` to open it in your default web browser.
-
-## ⚙️ Customization Guide
-
-### 1. Changing Colors & Fonts
-
-The Tailwind configuration is embedded directly in the `<head>` of `index.html`. You can modify the brand colors here:
-
-```javascript
-tailwind.config = {
-    theme: {
-        extend: {
-            colors: {
-                brand: {
-                    cyan: '#00eaff', // Primary accent color
-                    dark: '#020617', // Background color
-                    // ... other colors
-                }
-            }
-        }
-    }
-}
-
-```
-
-### 2. Updating Content
-
-* **Experience:** Located in the `<section id="experience">`. Update the `<h3>` (Role) and `<p>` (Company) tags.
-* **Projects:** Located in `<section id="projects">`. Each project is a `<div>` with the class `project-card`.
-* *Important:* When adding a new project, ensure you add the correct `data-category` attribute (e.g., `data-category="ai"` or `data-category="web"`) so the filter buttons work correctly.
-
-
-* **Education:** Located in `<section id="education">`.
-
-### 3. Adding/Removing Skills in Banner
-
-Look for the `` section. You need to update the list of icons/text in **both** `div` containers (the original and the duplicate) to ensure the infinite scroll remains seamless.
-
-## 🤝 Contributing
-
-This is a personal portfolio, but suggestions are welcome!
-
-1. Fork the project.
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
-
-## 📄 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
+* **Email:** [yjadhav@syr.edu](mailto:yjadhav@syr.edu)
+* **LinkedIn:** [linkedin.com/in/yashvjadhav](https://linkedin.com/in/yashvjadhav)
+* **GitHub:** [github.com/YashJadhav100](https://github.com/YashJadhav100)
 
 ---
-
-**Yash Jadhav** *MS CS @ Syracuse University* [LinkedIn](https://linkedin.com/in/yashvjadhav) | [GitHub](https://github.com/YashJadhav100)
-
-```
-
-```
+*Designed and Engineered by Yash Jadhav © 2026*
