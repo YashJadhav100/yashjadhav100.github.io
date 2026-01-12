@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yash Jadhav | Data Science & Systems Engineer</title>
+    <meta name="description" content="Portfolio of Yash Jadhav - MS CS Student at Syracuse University. AI/ML, Compiler Optimization, and Data Engineering.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            cyan: '#00eaff',
+                            dark: '#020617', 
+                            card: '#0f172a', 
+                            text: '#94a3b8',
+                            accent: '#8b5cf6', 
+                            success: '#10b981'
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 10s infinite',
+                        'scroll': 'scroll 60s linear infinite',
+                        'fade-in': 'fadeIn 0.6s ease-out forwards',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        scroll: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00eaff; }
+        
+        /* Glassmorphism */
+        .glass {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Spotlight Effect */
+        .spotlight-card:hover::before {
+            opacity: 1;
+        }
+        .spotlight-card::before {
+            background: radial-gradient(
+                600px circle at var(--mouse-x) var(--mouse-y),
+                rgba(0, 234, 255, 0.06),
+                transparent 40%
+            );
+            border-radius: inherit;
+            content: "";
+            height: 100%;
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            transition: opacity 0.5s;
+            width: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        /* Grid Pattern */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                                          linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-white selection:bg-brand-cyan selection:text-black overflow-x-hidden relative antialiased" onload="initSpotlight()">
+
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <div class="absolute inset-0 bg-grid [mask-image:linear-gradient(to_bottom,transparent,black)]"></div>
+        <div class="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-brand-cyan/5 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-blob"></div>
+        <div class="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-brand-accent/5 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-blob animation-delay-2000"></div>
+    </div>
+
+    <nav class="fixed w-full z-50 transition-all duration-300 top-0 border-b border-white/5 bg-[#020617]/80 backdrop-blur-xl" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="#" class="text-2xl font-display font-bold tracking-tight hover:text-brand-cyan transition group">
+                Yash Jadhav
+            </a>
+            
+            <div class="hidden md:flex gap-6 text-sm font-medium text-brand-text">
+                <a href="#about" class="hover:text-white transition">About</a>
+                <a href="#experience" class="hover:text-white transition">Experience</a>
+                <a href="#education" class="hover:text-white transition">Education</a>
+                <a href="#projects" class="hover:text-white transition">Projects</a>
+                <a href="#certifications" class="hover:text-white transition">Certs</a>
+                <a href="#contact" class="hover:text-white transition">Contact</a>
+            </div>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="assets/Yash_Jadhav_Resume.pdf" target="_blank" class="px-5 py-2 bg-white text-black font-semibold rounded-full hover:bg-brand-cyan hover:shadow-[0_0_20px_rgba(0,234,255,0.4)] transition text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-download"></i> Resume
+                </a>
+            </div>
+
+            <button class="md:hidden text-xl text-white" onclick="toggleMobileMenu()"><i class="fa-solid fa-bars"></i></button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-brand-dark border-b border-white/10 p-6 flex-col gap-6 md:hidden shadow-2xl">
+            <a href="#about" class="block text-lg" onclick="toggleMobileMenu()">About</a>
+            <a href="#experience" class="block text-lg" onclick="toggleMobileMenu()">Experience</a>
+            <a href="#projects" class="block text-lg" onclick="toggleMobileMenu()">Projects</a>
+            <a href="assets/Yash_Jadhav_Resume.pdf" target="_blank" class="block text-brand-cyan font-bold">View Resume</a>
+        </div>
+    </nav>
+
+    <section class="relative z-10 min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
+        
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-cyan/5 border border-brand-cyan/20 text-xs font-mono text-brand-cyan mb-8 animate-fade-in">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-cyan opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-cyan"></span>
+            </span>
+            OPEN TO WORK: SUMMER 2025 & FULL-TIME 2026
+        </div>
+
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight mb-8 animate-fade-in" style="animation-delay: 0.1s;">
+            Yash Jadhav <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-blue-400 to-brand-accent">Data & Systems Engineer.</span>
+        </h1>
+
+        <p class="max-w-3xl text-lg md:text-xl text-brand-text mb-12 leading-relaxed animate-fade-in font-light" style="animation-delay: 0.2s;">
+            I am a Master's student at <strong class="text-white">Syracuse University</strong> building high-performance <span class="text-brand-cyan">AI/ML pipelines</span>, optimizing <span class="text-brand-cyan">compiler infrastructures</span>, and deploying scalable <span class="text-brand-cyan">data-driven applications</span>.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4 animate-fade-in" style="animation-delay: 0.3s;">
+            <a href="#projects" class="px-8 py-4 bg-brand-cyan text-black font-bold rounded-full hover:scale-105 hover:shadow-[0_0_30px_rgba(0,234,255,0.3)] transition duration-300">
+                View 20+ Projects
+            </a>
+            <a href="https://github.com/YashJadhav100" target="_blank" class="px-8 py-4 bg-white/5 border border-white/10 text-white font-bold rounded-full hover:bg-white/10 transition duration-300 flex items-center gap-2">
+                <i class="fa-brands fa-github"></i> GitHub
+            </a>
+        </div>
+    </section>
+
+    <div class="w-full border-y border-white/5 bg-black/20 overflow-hidden py-10 relative z-10">
+        <div class="flex w-max animate-scroll">
+            <div class="flex gap-16 items-center px-8 opacity-50 grayscale hover:grayscale-0 transition duration-500">
+                <span class="text-2xl font-bold font-display"><i class="fa-brands fa-python mr-2"></i>Python</span>
+                <span class="text-2xl font-bold font-display"><i class="fa-brands fa-react mr-2"></i>React</span>
+                <span class="text-2xl font-bold font-display"><i class="fa-solid fa-microchip mr-2"></i>MLIR</span>
+                <span class="text-2xl font-bold font-display"><i class="fa-solid fa-server mr-2"></i>SQL</span>
+                <span class="text-2xl font-bold font-display"><i class="fa-brands fa-aws mr-2"></i>AWS</span>
+                <span class="text-2xl font-bold font-display"><i class="fa-brands fa-docker mr-2"></i>Docker</span>
+                <span class="text-2xl font-bold font-display"><i class="fa-solid fa-robot mr-2"></i>UiPath</span>
+                <span class="text-2xl font-bold font-display"><i class="fa-solid fa-brain mr-2"></i>TensorFlow</span>
+                <span class="text-2xl font-bold font-display"><i class="fa-solid fa-fire mr-2"></i>PyTorch</span>
+                <span class="text-2xl font-bold font-display">LLVM</span>
+            </div>
+             <div class="flex gap-16 items-center px-8 opacity-50 grayscale hover:grayscale-0 transition duration-500">
+                <span class="text-2xl font-bold font-display"><i class="fa-brands fa-python mr-2"></i>Python</span>
+                <span class="text-2xl font-bold font-display"><i class="fa-brands fa-react mr-2"></i>React</span>
+                <span class="text-2xl font-bold font-display"><i class="fa-solid fa-microchip mr-2"></i>MLIR</span>
+                <span class="text-2xl font-bold font-display"><i class="fa-solid fa-server mr-2"></i>SQL</span>
+                <span class="text-2xl font-bold font-display"><i class="fa-brands fa-aws mr-2"></i>AWS</span>
+                <span class="text-2xl font-bold font-display"><i class="fa-brands fa-docker mr-2"></i>Docker</span>
+                <span class="text-2xl font-bold font-display"><i class="fa-solid fa-robot mr-2"></i>UiPath</span>
+                <span class="text-2xl font-bold font-display"><i class="fa-solid fa-brain mr-2"></i>TensorFlow</span>
+                <span class="text-2xl font-bold font-display"><i class="fa-solid fa-fire mr-2"></i>PyTorch</span>
+                <span class="text-2xl font-bold font-display">LLVM</span>
+            </div>
+        </div>
+    </div>
+
+    <section id="about" class="py-20 px-6 max-w-4xl mx-auto text-center relative z-10">
+        <h2 class="text-4xl font-display font-bold mb-8">Technical Focus</h2>
+        <p class="text-lg text-brand-text leading-relaxed">
+            I exist at the intersection of <strong class="text-white">Systems Engineering</strong> and <strong class="text-white">Data Science</strong>. 
+            I don't just build models; I build the pipelines that feed them and the interfaces that make them usable. 
+            From digging into low-level <span class="text-brand-cyan">MLIR compiler logic</span> to deploying high-level 
+            <span class="text-brand-cyan">predictive dashboards</span>, I focus on optimization, correctness, and scalability.
+        </p>
+    </section>
+
+    <section id="experience" class="py-20 px-6 max-w-5xl mx-auto relative z-10">
+        <h2 class="text-4xl font-display font-bold mb-16 text-center">Professional Experience</h2>
+
+        <div class="relative border-l border-white/10 ml-4 md:ml-0 space-y-12">
+            
+            <div class="relative pl-8 md:pl-12 group">
+                <div class="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-brand-cyan shadow-[0_0_10px_#00eaff]"></div>
+                <div class="glass p-8 rounded-2xl border border-white/5 group-hover:border-brand-cyan/20 transition duration-300">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Administrative Assistant (Data & Operations)</h3>
+                            <p class="text-brand-cyan font-medium">Syracuse University</p>
+                        </div>
+                        <span class="text-xs font-mono text-brand-text bg-white/5 px-3 py-1 rounded-full mt-2 md:mt-0">Dec 2025 - Present</span>
+                    </div>
+                    <div class="mb-4 flex flex-wrap gap-2">
+                         <span class="inline-block bg-brand-cyan/10 text-brand-cyan text-xs font-mono px-2 py-1 rounded border border-brand-cyan/20">SQL</span>
+                         <span class="inline-block bg-brand-cyan/10 text-brand-cyan text-xs font-mono px-2 py-1 rounded border border-brand-cyan/20">Python</span>
+                         <span class="inline-block bg-brand-cyan/10 text-brand-cyan text-xs font-mono px-2 py-1 rounded border border-brand-cyan/20">Excel</span>
+                    </div>
+                    <ul class="list-disc list-outside ml-4 text-brand-text/90 space-y-2 leading-relaxed text-sm">
+                        <li>Apply <strong>relational data modeling</strong> and normalization principles to maintain structured, query-efficient exam and scheduling datasets.</li>
+                        <li>Execute <strong>SQL-based data validation</strong> checks and aggregations to verify record consistency, detect anomalies, and support operational reporting.</li>
+                        <li>Use <strong>Python-based scripts</strong> and spreadsheet logic to automate data cleanup, file validation, and batch processing of exam-related records.</li>
+                        <li>Generate operational summaries and dashboards using Excel and BI tools to monitor workflow status, data quality, and throughput metrics.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="relative pl-8 md:pl-12 group">
+                <div class="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-white/20 group-hover:bg-brand-accent transition"></div>
+                <div class="glass p-8 rounded-2xl border border-white/5 group-hover:border-brand-accent/20 transition duration-300">
+                      <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Data Science Researcher</h3>
+                            <p class="text-brand-accent font-medium">Syracuse University (NEXIS Lab)</p>
+                        </div>
+                        <span class="text-xs font-mono text-brand-text bg-white/5 px-3 py-1 rounded-full mt-2 md:mt-0">Sep 2025 - Dec 2025</span>
+                    </div>
+                    <div class="mb-4 flex flex-wrap gap-2">
+                         <span class="inline-block bg-brand-accent/10 text-brand-accent text-xs font-mono px-2 py-1 rounded border border-brand-accent/20">Pandas</span>
+                         <span class="inline-block bg-brand-accent/10 text-brand-accent text-xs font-mono px-2 py-1 rounded border border-brand-accent/20">ETL</span>
+                         <span class="inline-block bg-brand-accent/10 text-brand-accent text-xs font-mono px-2 py-1 rounded border border-brand-accent/20">ML</span>
+                    </div>
+                    <ul class="list-disc list-outside ml-4 text-brand-text/90 space-y-2 leading-relaxed text-sm">
+                        <li>Lead data processing and modeling workflows for large-scale social media datasets using Python, SQL, and Pandas to extract behavioral insights.</li>
+                        <li>Oversee <strong>ETL workflow redesign</strong> to clean and structure 100K+ records, improving model accuracy and reducing preprocessing time by 30%.</li>
+                        <li>Drive statistical analysis and machine learning experimentation including classification and feature engineering to advance research on user interaction trends.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="relative pl-8 md:pl-12 group">
+                <div class="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-white/20 group-hover:bg-brand-accent transition"></div>
+                 <div class="glass p-8 rounded-2xl border border-white/5 group-hover:border-brand-accent/20 transition duration-300">
+                      <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Graduate Research Assistant</h3>
+                            <p class="text-brand-accent font-medium">Syracuse University (ARIES Lab)</p>
+                        </div>
+                        <span class="text-xs font-mono text-brand-text bg-white/5 px-3 py-1 rounded-full mt-2 md:mt-0">May 2025 - Aug 2025</span>
+                    </div>
+                    <div class="mb-4 flex flex-wrap gap-2">
+                         <span class="inline-block bg-brand-accent/10 text-brand-accent text-xs font-mono px-2 py-1 rounded border border-brand-accent/20">MLIR</span>
+                         <span class="inline-block bg-brand-accent/10 text-brand-accent text-xs font-mono px-2 py-1 rounded border border-brand-accent/20">Python</span>
+                         <span class="inline-block bg-brand-accent/10 text-brand-accent text-xs font-mono px-2 py-1 rounded border border-brand-accent/20">Log Analysis</span>
+                    </div>
+                    <ul class="list-disc list-outside ml-4 text-brand-text/90 space-y-2 leading-relaxed text-sm">
+                        <li>Analyzed <strong>500K+ MLIR log records</strong> to pinpoint performance bottlenecks and implemented an automated cleaning pipeline, cutting debugging time by 30%.</li>
+                        <li>Partnered with faculty and PhD teams to build dashboards visualizing runtime, memory usage, and scalability trends.</li>
+                        <li>Coordinated with a cross-functional research group to document workflows and provide open-source MLIR updates adopted by 30+ collaborators.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="relative pl-8 md:pl-12 group">
+                <div class="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-white/20 group-hover:bg-brand-success transition"></div>
+                 <div class="glass p-8 rounded-2xl border border-white/5 group-hover:border-brand-success/20 transition duration-300">
+                      <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Project Fellow (Chanakya Fellow)</h3>
+                            <p class="text-brand-success font-medium">TIH-IOT, IIT Bombay</p>
+                        </div>
+                        <span class="text-xs font-mono text-brand-text bg-white/5 px-3 py-1 rounded-full mt-2 md:mt-0">Apr 2023 - Jan 2024</span>
+                    </div>
+                    <div class="mb-4 flex flex-wrap gap-2">
+                         <span class="inline-block bg-brand-success/10 text-brand-success text-xs font-mono px-2 py-1 rounded border border-brand-success/20">IoT</span>
+                         <span class="inline-block bg-brand-success/10 text-brand-success text-xs font-mono px-2 py-1 rounded border border-brand-success/20">Research</span>
+                         <span class="inline-block bg-brand-success/10 text-brand-success text-xs font-mono px-2 py-1 rounded border border-brand-success/20">Collaboration</span>
+                    </div>
+                    <ul class="list-disc list-outside ml-4 text-brand-text/90 space-y-2 leading-relaxed text-sm">
+                        <li>Selected as a Chanakya Fellow in the prestigious TIH-IOT program, focusing on IoT technology.</li>
+                        <li>Contributed to innovative research projects, enhancing understanding of cutting-edge IoT applications.</li>
+                        <li>Collaborated with a diverse team to drive technological advancements, fostering a culture of innovation.</li>
+                        <li>Developed critical skills in IoT research, project management, and interdisciplinary collaboration.</li>
+                    </ul>
+                </div>
+            </div>
+
+             <div class="relative pl-8 md:pl-12 group">
+                <div class="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-white/20 group-hover:bg-purple-500 transition"></div>
+                 <div class="glass p-8 rounded-2xl border border-white/5 group-hover:border-purple-500/20 transition duration-300">
+                      <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Creative Head</h3>
+                            <p class="text-purple-400 font-medium">ETSA VIT</p>
+                        </div>
+                        <span class="text-xs font-mono text-brand-text bg-white/5 px-3 py-1 rounded-full mt-2 md:mt-0">Jun 2022 - Jul 2023</span>
+                    </div>
+                    <div class="mb-4 flex flex-wrap gap-2">
+                         <span class="inline-block bg-purple-500/10 text-purple-400 text-xs font-mono px-2 py-1 rounded border border-purple-500/20">Leadership</span>
+                         <span class="inline-block bg-purple-500/10 text-purple-400 text-xs font-mono px-2 py-1 rounded border border-purple-500/20">Branding</span>
+                    </div>
+                    <ul class="list-disc list-outside ml-4 text-brand-text/90 space-y-2 leading-relaxed text-sm">
+                        <li>Conceptualized and executed innovative events and workshops for the ETSA Committee, enhancing participant engagement.</li>
+                        <li>Led brainstorming sessions to generate unique event ideas, ensuring a fresh approach for each project.</li>
+                        <li>Developed visual identity and branding, including logos and promotional materials, to elevate event presence.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="relative pl-8 md:pl-12 group">
+                <div class="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-white/20 group-hover:bg-yellow-500 transition"></div>
+                 <div class="glass p-8 rounded-2xl border border-white/5 group-hover:border-yellow-500/20 transition duration-300">
+                      <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Coding Tutor</h3>
+                            <p class="text-yellow-400 font-medium">CodeKaroYaaro</p>
+                        </div>
+                        <span class="text-xs font-mono text-brand-text bg-white/5 px-3 py-1 rounded-full mt-2 md:mt-0">Mar 2023 - Jun 2023</span>
+                    </div>
+                     <div class="mb-4 flex flex-wrap gap-2">
+                         <span class="inline-block bg-yellow-500/10 text-yellow-400 text-xs font-mono px-2 py-1 rounded border border-yellow-500/20">HTML/CSS/JS</span>
+                         <span class="inline-block bg-yellow-500/10 text-yellow-400 text-xs font-mono px-2 py-1 rounded border border-yellow-500/20">Teaching</span>
+                    </div>
+                    <ul class="list-disc list-outside ml-4 text-brand-text/90 space-y-2 leading-relaxed text-sm">
+                        <li>Led engaging programming lessons for children using Scratch, Code.org, HTML, CSS, and JavaScript.</li>
+                        <li>Designed interactive, age-appropriate curricula that fostered computational thinking and problem-solving skills.</li>
+                        <li>Mentored students individually, boosting their confidence and interest in technology and coding.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="relative pl-8 md:pl-12 group">
+                <div class="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-white/20 group-hover:bg-blue-500 transition"></div>
+                 <div class="glass p-8 rounded-2xl border border-white/5 group-hover:border-blue-500/20 transition duration-300">
+                      <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Frontend Developer</h3>
+                            <p class="text-blue-400 font-medium">Oasis Infobyte</p>
+                        </div>
+                        <span class="text-xs font-mono text-brand-text bg-white/5 px-3 py-1 rounded-full mt-2 md:mt-0">Mar 2023 - Apr 2023</span>
+                    </div>
+                     <div class="mb-4 flex flex-wrap gap-2">
+                         <span class="inline-block bg-blue-500/10 text-blue-400 text-xs font-mono px-2 py-1 rounded border border-blue-500/20">Web Dev</span>
+                         <span class="inline-block bg-blue-500/10 text-blue-400 text-xs font-mono px-2 py-1 rounded border border-blue-500/20">Git</span>
+                    </div>
+                    <ul class="list-disc list-outside ml-4 text-brand-text/90 space-y-2 leading-relaxed text-sm">
+                        <li>Designed and developed responsive websites using HTML, CSS, JavaScript, and Bootstrap, enhancing user engagement.</li>
+                        <li>Collaborated on wireframing and site architecture, ensuring design consistency and technical alignment.</li>
+                        <li>Implemented mobile-first design and accessibility best practices.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="relative pl-8 md:pl-12 group">
+                <div class="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-white/20 group-hover:bg-brand-success transition"></div>
+                 <div class="glass p-8 rounded-2xl border border-white/5 group-hover:border-brand-success/20 transition duration-300">
+                      <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Automation Developer</h3>
+                            <p class="text-brand-success font-medium">UiPath</p>
+                        </div>
+                        <span class="text-xs font-mono text-brand-text bg-white/5 px-3 py-1 rounded-full mt-2 md:mt-0">Dec 2022 - Mar 2023</span>
+                    </div>
+                    <div class="mb-4 flex flex-wrap gap-2">
+                         <span class="inline-block bg-brand-success/10 text-brand-success text-xs font-mono px-2 py-1 rounded border border-brand-success/20">UiPath</span>
+                         <span class="inline-block bg-brand-success/10 text-brand-success text-xs font-mono px-2 py-1 rounded border border-brand-success/20">RPA</span>
+                    </div>
+                    <ul class="list-disc list-outside ml-4 text-brand-text/90 space-y-2 leading-relaxed text-sm">
+                        <li>Designed and implemented end-to-end automation workflows using UiPath, enhancing efficiency in data entry.</li>
+                        <li>Collaborated with stakeholders to refine automation requirements, leading to a <strong>30% reduction</strong> in processing time.</li>
+                        <li>Integrated UiPath Orchestrator for centralized management and scheduling of automation bots.</li>
+                    </ul>
+                </div>
+            </div>
+
+             <div class="relative pl-8 md:pl-12 group">
+                <div class="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-white/20 group-hover:bg-orange-500 transition"></div>
+                 <div class="glass p-8 rounded-2xl border border-white/5 group-hover:border-orange-500/20 transition duration-300">
+                      <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Telecommunications Assistant</h3>
+                            <p class="text-orange-400 font-medium">Doordarshan Kendra</p>
+                        </div>
+                        <span class="text-xs font-mono text-brand-text bg-white/5 px-3 py-1 rounded-full mt-2 md:mt-0">Jun 2022 - Jul 2022</span>
+                    </div>
+                     <div class="mb-4 flex flex-wrap gap-2">
+                         <span class="inline-block bg-orange-500/10 text-orange-400 text-xs font-mono px-2 py-1 rounded border border-orange-500/20">Telecommunications</span>
+                         <span class="inline-block bg-orange-500/10 text-orange-400 text-xs font-mono px-2 py-1 rounded border border-orange-500/20">Broadcasting</span>
+                    </div>
+                    <ul class="list-disc list-outside ml-4 text-brand-text/90 space-y-2 leading-relaxed text-sm">
+                        <li>Assisted senior engineers in monitoring and maintaining signal transmission systems and studio infrastructure.</li>
+                        <li>Developed a comprehensive understanding of television broadcasting workflows, including transmission protocols.</li>
+                        <li>Contributed to routine inspections and operational checks, ensuring uninterrupted signal flow.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="education" class="py-20 px-6 max-w-7xl mx-auto relative z-10">
+        <h2 class="text-4xl font-display font-bold mb-12 text-center">Education</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            
+            <div class="glass p-8 rounded-2xl border border-white/5 flex flex-col h-full relative group hover:border-brand-cyan/30 transition-all duration-300">
+                <div class="flex justify-between items-start mb-2">
+                    <div>
+                        <h3 class="text-2xl font-bold text-brand-cyan">Master of Science</h3>
+                        <p class="text-xl text-white font-medium">Computer Science</p>
+                        <p class="text-brand-text mt-1">Syracuse University</p>
+                    </div>
+                    <span class="text-xs font-bold text-black bg-brand-cyan px-3 py-1 rounded-full whitespace-nowrap">2024 - 2026</span>
+                </div>
+                <p class="text-sm text-brand-text/60 font-mono mb-6">Syracuse, NY</p>
+                
+                <div class="mt-auto border-t border-white/5 pt-4">
+                    <p class="text-xs font-mono text-brand-cyan mb-2 tracking-wider uppercase">Focus</p>
+                    <p class="text-lg text-white font-medium">Data Engineering, Artificial Intelligence & Scalable Systems</p>
+                </div>
+            </div>
+
+            <div class="glass p-8 rounded-2xl border border-white/5 flex flex-col h-full relative group hover:border-brand-accent/30 transition-all duration-300">
+                <div class="flex justify-between items-start mb-2">
+                    <div>
+                        <h3 class="text-2xl font-bold text-brand-accent">Bachelor of Technology</h3>
+                        <p class="text-lg text-white font-medium">Electronics & Telecom Engineering</p>
+                        <p class="text-sm text-brand-text mt-1">Minor in AI & Machine Learning</p>
+                        <p class="text-brand-text mt-1">Vidyalankar Institute of Technology</p>
+                    </div>
+                    <span class="text-xs font-bold text-black bg-brand-accent px-3 py-1 rounded-full whitespace-nowrap">2020 - 2024</span>
+                </div>
+                 <p class="text-sm text-brand-text/60 font-mono mb-6">Mumbai, India</p>
+
+                <div class="mt-auto border-t border-white/5 pt-4">
+                    <p class="text-xs font-mono text-brand-accent mb-2 tracking-wider uppercase">Capstone Project</p>
+                    <p class="text-sm text-white font-medium leading-relaxed">
+                        Design and Implementation of Bladeless UAV Technology to Optimize Power Consumption using Dyson & Coanda Effect.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 px-6 max-w-7xl mx-auto relative z-10">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+            <div>
+                <h2 class="text-5xl font-display font-bold mb-4">Engineered Solutions</h2>
+                <p class="text-brand-text max-w-xl">A complete inventory of projects featuring Data Science, Machine Learning, and Full Stack Engineering.</p>
+            </div>
+            
+            <div class="flex flex-wrap gap-2 mt-6 md:mt-0">
+                <button class="filter-btn active px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-brand-cyan text-black" data-filter="all">All</button>
+                <button class="filter-btn px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-white/5 text-brand-text hover:bg-white/10 hover:text-white" data-filter="ai">AI / Data</button>
+                <button class="filter-btn px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-white/5 text-brand-text hover:bg-white/10 hover:text-white" data-filter="web">Full Stack</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+            
+            <div class="project-card group spotlight-card relative bg-brand-card border border-white/5 rounded-2xl p-6 hover:-translate-y-1 transition duration-300 flex flex-col" data-category="ai">
+                <div class="flex justify-between items-start mb-4 relative z-10">
+                    <div class="p-2 bg-brand-cyan/10 rounded-lg text-brand-cyan"><i class="fa-solid fa-file-contract text-xl"></i></div>
+                    <div class="flex gap-3 text-lg">
+                        <a href="https://github.com/YashJadhav100/AI-Powered-Resume-Analyzer" target="_blank" class="hover:text-brand-cyan transition"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://ai-powered-resume-analyzer-pkcdmtxizkykt9sr2jdbew.streamlit.app" target="_blank" class="hover:text-brand-cyan transition"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-brand-cyan transition relative z-10">AI Resume Analyzer</h3>
+                <p class="text-sm text-brand-text mb-4 flex-grow relative z-10">ATS-style intelligence system using TF-IDF & Cosine Similarity to score resumes against job descriptions.</p>
+                <div class="flex flex-wrap gap-2 text-[10px] font-mono uppercase text-brand-text/60 relative z-10">
+                    <span class="border border-white/10 px-2 py-1 rounded">Python</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">NLP</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">Streamlit</span>
+                </div>
+            </div>
+
+            <div class="project-card group spotlight-card relative bg-brand-card border border-white/5 rounded-2xl p-6 hover:-translate-y-1 transition duration-300 flex flex-col" data-category="ai">
+                 <div class="flex justify-between items-start mb-4 relative z-10">
+                    <div class="p-2 bg-red-500/10 rounded-lg text-red-500"><i class="fa-solid fa-user-shield text-xl"></i></div>
+                    <div class="flex gap-3 text-lg">
+                         <a href="https://github.com/YashJadhav100/Fake-Job-Detector" target="_blank" class="hover:text-red-500 transition"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://yashjadhav100.github.io/Fake-Job-Detector" target="_blank" class="hover:text-red-500 transition"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-red-500 transition relative z-10">Fake Job Detector</h3>
+                <p class="text-sm text-brand-text mb-4 flex-grow relative z-10">ML classifier detecting fraudulent job postings with SHAP explainability for model transparency.</p>
+                 <div class="flex flex-wrap gap-2 text-[10px] font-mono uppercase text-brand-text/60 relative z-10">
+                    <span class="border border-white/10 px-2 py-1 rounded">Scikit-Learn</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">SHAP</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">Pandas</span>
+                </div>
+            </div>
+
+            <div class="project-card group spotlight-card relative bg-brand-card border border-white/5 rounded-2xl p-6 hover:-translate-y-1 transition duration-300 flex flex-col" data-category="ai">
+                <div class="flex justify-between items-start mb-4 relative z-10">
+                    <div class="p-2 bg-brand-accent/10 rounded-lg text-brand-accent"><i class="fa-brands fa-twitter text-xl"></i></div>
+                    <div class="flex gap-3 text-lg">
+                        <a href="https://github.com/YashJadhav100/Twitter-Emotion-Classification" target="_blank" class="hover:text-brand-accent transition"><i class="fa-brands fa-github"></i></a>
+                         <a href="https://yashjadhav100.github.io/Twitter-Emotion-Classification" target="_blank" class="hover:text-brand-accent transition"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-brand-accent transition relative z-10">Twitter Emotion Pipeline</h3>
+                <p class="text-sm text-brand-text mb-4 flex-grow relative z-10">Multi-label emotion detection pipeline for large-scale tweets using BERT/ESA architectures.</p>
+                <div class="flex flex-wrap gap-2 text-[10px] font-mono uppercase text-brand-text/60 relative z-10">
+                    <span class="border border-white/10 px-2 py-1 rounded">BERT</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">Python</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">PyTorch</span>
+                </div>
+            </div>
+
+            <div class="project-card group spotlight-card relative bg-brand-card border border-white/5 rounded-2xl p-6 hover:-translate-y-1 transition duration-300 flex flex-col" data-category="ai">
+                <div class="flex justify-between items-start mb-4 relative z-10">
+                    <div class="p-2 bg-pink-500/10 rounded-lg text-pink-500"><i class="fa-solid fa-heart-pulse text-xl"></i></div>
+                    <div class="flex gap-3 text-lg">
+                         <a href="https://github.com/YashJadhav100/Hospital-Readmission-Predictor" target="_blank" class="hover:text-pink-500 transition"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://hospital-readmission-predictor-kro4jvk9njwzt3a4xitsbj.streamlit.app/" target="_blank" class="hover:text-pink-500 transition"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-pink-500 transition relative z-10">Hospital Readmission</h3>
+                <p class="text-sm text-brand-text mb-4 flex-grow relative z-10">Predicting 30-day patient readmission risk using clinical features and Random Forest.</p>
+                <div class="flex flex-wrap gap-2 text-[10px] font-mono uppercase text-brand-text/60 relative z-10">
+                    <span class="border border-white/10 px-2 py-1 rounded">Random Forest</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">Scikit-Learn</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">Streamlit</span>
+                </div>
+            </div>
+
+            <div class="project-card group spotlight-card relative bg-brand-card border border-white/5 rounded-2xl p-6 hover:-translate-y-1 transition duration-300 flex flex-col" data-category="ai">
+                 <div class="flex justify-between items-start mb-4 relative z-10">
+                    <div class="p-2 bg-yellow-500/10 rounded-lg text-yellow-500"><i class="fa-solid fa-chart-pie text-xl"></i></div>
+                    <div class="flex gap-3 text-lg">
+                        <a href="https://github.com/YashJadhav100/Sales-Customer-Insights-Dashboard" target="_blank" class="hover:text-yellow-500 transition"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://sales-customer-insights-dashboard-pxsdybekwzcxa9pduv2tm9.streamlit.app" target="_blank" class="hover:text-yellow-500 transition"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-yellow-500 transition relative z-10">Sales Intelligence BI</h3>
+                <p class="text-sm text-brand-text mb-4 flex-grow relative z-10">Interactive Power BI & Pandas dashboard analyzing 100K+ transaction records for churn & revenue.</p>
+                <div class="flex flex-wrap gap-2 text-[10px] font-mono uppercase text-brand-text/60 relative z-10">
+                    <span class="border border-white/10 px-2 py-1 rounded">Power BI</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">ETL</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">Python</span>
+                </div>
+            </div>
+
+             <div class="project-card group spotlight-card relative bg-brand-card border border-white/5 rounded-2xl p-6 hover:-translate-y-1 transition duration-300 flex flex-col" data-category="ai">
+                 <div class="flex justify-between items-start mb-4 relative z-10">
+                    <div class="p-2 bg-rose-500/10 rounded-lg text-rose-500"><i class="fa-solid fa-users-slash text-xl"></i></div>
+                     <div class="flex gap-3 text-lg">
+                          <a href="https://github.com/YashJadhav100/Customer-Churn-Prediction" target="_blank" class="hover:text-rose-500 transition"><i class="fa-brands fa-github"></i></a>
+                          <a href="https://yashjadhav100.github.io/Customer-Churn-Prediction" target="_blank" class="hover:text-rose-500 transition"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                     </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-rose-500 transition relative z-10">Churn Prediction</h3>
+                <p class="text-sm text-brand-text mb-4 flex-grow relative z-10">Classification models (XGBoost) trained on telecom data achieving 87% accuracy.</p>
+                <div class="flex flex-wrap gap-2 text-[10px] font-mono uppercase text-brand-text/60 relative z-10">
+                    <span class="border border-white/10 px-2 py-1 rounded">XGBoost</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">Pandas</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">Python</span>
+                </div>
+            </div>
+
+            <div class="project-card group spotlight-card relative bg-brand-card border border-white/5 rounded-2xl p-6 hover:-translate-y-1 transition duration-300 flex flex-col" data-category="ai">
+                 <div class="flex justify-between items-start mb-4 relative z-10">
+                    <div class="p-2 bg-purple-500/10 rounded-lg text-purple-500"><i class="fa-solid fa-chart-line text-xl"></i></div>
+                     <div class="flex gap-3 text-lg">
+                        <a href="https://github.com/YashJadhav100/Sales-Forecasting-Time-Series" target="_blank" class="hover:text-purple-500 transition"><i class="fa-brands fa-github"></i></a>
+                         <a href="https://yashjadhav100.github.io/Sales-Forecasting-Time-Series" target="_blank" class="hover:text-purple-500 transition"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-purple-500 transition relative z-10">Time-Series Forecast</h3>
+                <p class="text-sm text-brand-text mb-4 flex-grow relative z-10">ARIMA & Prophet models for retail sales. Achieved MAPE under 10%.</p>
+                <div class="flex flex-wrap gap-2 text-[10px] font-mono uppercase text-brand-text/60 relative z-10">
+                    <span class="border border-white/10 px-2 py-1 rounded">ARIMA</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">Prophet</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">Python</span>
+                </div>
+            </div>
+
+            <div class="project-card group spotlight-card relative bg-brand-card border border-white/5 rounded-2xl p-6 hover:-translate-y-1 transition duration-300 flex flex-col" data-category="ai">
+                 <div class="flex justify-between items-start mb-4 relative z-10">
+                    <div class="p-2 bg-blue-300/10 rounded-lg text-blue-300"><i class="fa-solid fa-chart-simple text-xl"></i></div>
+                     <div class="flex gap-3 text-lg">
+                        <a href="https://github.com/YashJadhav100/Twitter-Sentiment-Dashboard" target="_blank" class="hover:text-blue-300 transition"><i class="fa-brands fa-github"></i></a>
+                         <a href="https://yashjadhav100.github.io/Twitter-Sentiment-Dashboard" target="_blank" class="hover:text-blue-300 transition"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-blue-300 transition relative z-10">Twitter Sentiment BI</h3>
+                <p class="text-sm text-brand-text mb-4 flex-grow relative z-10">Sentiment and emotion visualization dashboard built on large-scale tweet datasets.</p>
+                <div class="flex flex-wrap gap-2 text-[10px] font-mono uppercase text-brand-text/60 relative z-10">
+                    <span class="border border-white/10 px-2 py-1 rounded">Matplotlib</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">Pandas</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">Python</span>
+                </div>
+            </div>
+
+            <div class="project-card group spotlight-card relative bg-brand-card border border-white/5 rounded-2xl p-6 hover:-translate-y-1 transition duration-300 flex flex-col" data-category="web">
+                <div class="flex justify-between items-start mb-4 relative z-10">
+                    <div class="p-2 bg-blue-500/10 rounded-lg text-blue-500"><i class="fa-solid fa-shop text-xl"></i></div>
+                    <div class="flex gap-3 text-lg">
+                         <a href="https://github.com/YashJadhav100/E-Commerce-Web-Application" target="_blank" class="hover:text-blue-500 transition"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://yashjadhav100.github.io/E-Commerce-Web-Application" target="_blank" class="hover:text-blue-500 transition"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-blue-500 transition relative z-10">E-Commerce Platform</h3>
+                <p class="text-sm text-brand-text mb-4 flex-grow relative z-10">Robust MERN stack app with secure JWT auth, Stripe payments, and Redux state management.</p>
+                <div class="flex flex-wrap gap-2 text-[10px] font-mono uppercase text-brand-text/60 relative z-10">
+                    <span class="border border-white/10 px-2 py-1 rounded">React</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">Node</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">AWS</span>
+                </div>
+            </div>
+
+            <div class="project-card group spotlight-card relative bg-brand-card border border-white/5 rounded-2xl p-6 hover:-translate-y-1 transition duration-300 flex flex-col" data-category="web">
+                 <div class="flex justify-between items-start mb-4 relative z-10">
+                    <div class="p-2 bg-indigo-500/10 rounded-lg text-indigo-500"><i class="fa-solid fa-list-check text-xl"></i></div>
+                    <div class="flex gap-3 text-lg">
+                        <a href="https://github.com/YashJadhav100/Task-Management-System" target="_blank" class="hover:text-indigo-500 transition"><i class="fa-brands fa-github"></i></a>
+                         <a href="https://yashjadhav100.github.io/Task-Management-System" target="_blank" class="hover:text-indigo-500 transition"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-indigo-500 transition relative z-10">Task Management System</h3>
+                <p class="text-sm text-brand-text mb-4 flex-grow relative z-10">JWT-secured system built with Node.js & PostgreSQL supporting user roles and task analytics.</p>
+                <div class="flex flex-wrap gap-2 text-[10px] font-mono uppercase text-brand-text/60 relative z-10">
+                    <span class="border border-white/10 px-2 py-1 rounded">PostgreSQL</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">Node</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">JWT</span>
+                </div>
+            </div>
+
+             <div class="project-card group spotlight-card relative bg-brand-card border border-white/5 rounded-2xl p-6 hover:-translate-y-1 transition duration-300 flex flex-col" data-category="web">
+                 <div class="flex justify-between items-start mb-4 relative z-10">
+                    <div class="p-2 bg-cyan-500/10 rounded-lg text-cyan-500"><i class="fa-solid fa-server text-xl"></i></div>
+                    <div class="flex gap-3 text-lg">
+                        <a href="https://github.com/YashJadhav100/E-Commerce-Backend-Platform" target="_blank" class="hover:text-cyan-500 transition"><i class="fa-brands fa-github"></i></a>
+                         <a href="#" class="hover:text-cyan-500 transition"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-cyan-500 transition relative z-10">E-Commerce Backend</h3>
+                <p class="text-sm text-brand-text mb-4 flex-grow relative z-10">Scalable REST API infrastructure supporting authentication, product CRUD, and order processing.</p>
+                <div class="flex flex-wrap gap-2 text-[10px] font-mono uppercase text-brand-text/60 relative z-10">
+                    <span class="border border-white/10 px-2 py-1 rounded">Node.js</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">Express</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">MongoDB</span>
+                </div>
+            </div>
+
+            <div class="project-card group spotlight-card relative bg-brand-card border border-white/5 rounded-2xl p-6 hover:-translate-y-1 transition duration-300 flex flex-col" data-category="web">
+                <div class="flex justify-between items-start mb-4 relative z-10">
+                    <div class="p-2 bg-amber-500/10 rounded-lg text-amber-500"><i class="fa-solid fa-book text-xl"></i></div>
+                    <div class="flex gap-3 text-lg">
+                        <a href="https://github.com/YashJadhav100/Library-Management-System" target="_blank" class="hover:text-amber-500 transition"><i class="fa-brands fa-github"></i></a>
+                         <a href="https://yashjadhav100.github.io/Library-Management-System" target="_blank" class="hover:text-amber-500 transition"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-amber-500 transition relative z-10">Library Management</h3>
+                <p class="text-sm text-brand-text mb-4 flex-grow relative z-10">Java OOP based admin system for managing books, fines, and issuance records.</p>
+                <div class="flex flex-wrap gap-2 text-[10px] font-mono uppercase text-brand-text/60 relative z-10">
+                    <span class="border border-white/10 px-2 py-1 rounded">Java</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">MySQL</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">OOP</span>
+                </div>
+            </div>
+
+            <div class="project-card group spotlight-card relative bg-brand-card border border-white/5 rounded-2xl p-6 hover:-translate-y-1 transition duration-300 flex flex-col" data-category="web">
+                <div class="flex justify-between items-start mb-4 relative z-10">
+                    <div class="p-2 bg-green-500/10 rounded-lg text-green-500"><i class="fa-solid fa-building-columns text-xl"></i></div>
+                    <div class="flex gap-3 text-lg">
+                         <a href="https://github.com/YashJadhav100/Banking-System" target="_blank" class="hover:text-green-500 transition"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://banking-system-dqrwwgtg45uw4onooykian.streamlit.app/" target="_blank" class="hover:text-green-500 transition"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-green-500 transition relative z-10">Java Banking System</h3>
+                <p class="text-sm text-brand-text mb-4 flex-grow relative z-10">Secure CLI banking app with MySQL integration and OOP principles.</p>
+                <div class="flex flex-wrap gap-2 text-[10px] font-mono uppercase text-brand-text/60 relative z-10">
+                    <span class="border border-white/10 px-2 py-1 rounded">Java</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">MySQL</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">OOP</span>
+                </div>
+            </div>
+
+             <div class="project-card group spotlight-card relative bg-brand-card border border-white/5 rounded-2xl p-6 hover:-translate-y-1 transition duration-300 flex flex-col" data-category="web">
+                <div class="flex justify-between items-start mb-4 relative z-10">
+                    <div class="p-2 bg-white/10 rounded-lg text-white"><i class="fa-solid fa-code text-xl"></i></div>
+                    <div class="flex gap-3 text-lg">
+                         <a href="https://github.com/YashJadhav100/yashjadhav100.github.io" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://yashjadhav100.github.io" target="_blank" class="hover:text-white transition"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-brand-text transition relative z-10">Personal Portfolio</h3>
+                <p class="text-sm text-brand-text mb-4 flex-grow relative z-10">Responsive portfolio built with React and Tailwind CSS to showcase engineering work.</p>
+                <div class="flex flex-wrap gap-2 text-[10px] font-mono uppercase text-brand-text/60 relative z-10">
+                    <span class="border border-white/10 px-2 py-1 rounded">HTML5</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">Tailwind</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">JavaScript</span>
+                </div>
+            </div>
+
+            <div class="project-card group spotlight-card relative bg-brand-card border border-white/5 rounded-2xl p-6 hover:-translate-y-1 transition duration-300 flex flex-col" data-category="web">
+                <div class="flex justify-between items-start mb-4 relative z-10">
+                    <div class="p-2 bg-red-600/10 rounded-lg text-red-600"><i class="fa-brands fa-youtube text-xl"></i></div>
+                    <div class="flex gap-3 text-lg">
+                        <a href="https://github.com/YashJadhav100/YouTube-Clone" target="_blank" class="hover:text-red-600 transition"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://yashjadhav100.github.io/YouTube-Clone" target="_blank" class="hover:text-red-600 transition"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-red-600 transition relative z-10">YouTube Clone UI</h3>
+                <p class="text-sm text-brand-text mb-4 flex-grow relative z-10">Pixel-perfect responsive clone of YouTube’s homepage using pure HTML/CSS/JS.</p>
+                <div class="flex flex-wrap gap-2 text-[10px] font-mono uppercase text-brand-text/60 relative z-10">
+                    <span class="border border-white/10 px-2 py-1 rounded">HTML</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">CSS</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">JavaScript</span>
+                </div>
+            </div>
+
+             <div class="project-card group spotlight-card relative bg-brand-card border border-white/5 rounded-2xl p-6 hover:-translate-y-1 transition duration-300 flex flex-col" data-category="web">
+                <div class="flex justify-between items-start mb-4 relative z-10">
+                    <div class="p-2 bg-blue-300/10 rounded-lg text-blue-300"><i class="fa-solid fa-temperature-half text-xl"></i></div>
+                    <div class="flex gap-3 text-lg">
+                        <a href="https://github.com/YashJadhav100/Temperature-converter-webapp" target="_blank" class="hover:text-blue-300 transition"><i class="fa-brands fa-github"></i></a>
+                         <a href="https://yashjadhav100.github.io/Temperature-Converter" target="_blank" class="hover:text-blue-300 transition"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-blue-300 transition relative z-10">Temp Converter</h3>
+                <p class="text-sm text-brand-text mb-4 flex-grow relative z-10">Simple JS utility to convert temperatures between Celsius, Fahrenheit and Kelvin.</p>
+                <div class="flex flex-wrap gap-2 text-[10px] font-mono uppercase text-brand-text/60 relative z-10">
+                    <span class="border border-white/10 px-2 py-1 rounded">JavaScript</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">HTML</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">CSS</span>
+                </div>
+            </div>
+
+            <div class="project-card group spotlight-card relative bg-brand-card border border-white/5 rounded-2xl p-6 hover:-translate-y-1 transition duration-300 flex flex-col" data-category="web">
+                <div class="flex justify-between items-start mb-4 relative z-10">
+                    <div class="p-2 bg-white/10 rounded-lg text-white"><i class="fa-solid fa-hand-scissors text-xl"></i></div>
+                    <div class="flex gap-3 text-lg">
+                         <a href="https://github.com/YashJadhav100/Rock-Paper-Scissor-Game" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://yashjadhav100.github.io/Rock-Paper-Scissor-Game" target="_blank" class="hover:text-white transition"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-brand-text transition relative z-10">RPS Game</h3>
+                <p class="text-sm text-brand-text mb-4 flex-grow relative z-10">Interactive web-based game featuring DOM manipulation and game logic against a computer opponent.</p>
+                <div class="flex flex-wrap gap-2 text-[10px] font-mono uppercase text-brand-text/60 relative z-10">
+                    <span class="border border-white/10 px-2 py-1 rounded">JavaScript</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">HTML5</span>
+                    <span class="border border-white/10 px-2 py-1 rounded">CSS3</span>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="certifications" class="py-20 px-6 max-w-7xl mx-auto border-t border-white/5 relative z-10 bg-black/20">
+        <h2 class="text-4xl font-display font-bold mb-12 text-center">Certifications</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="flex items-center gap-4 p-4 border border-white/5 rounded-xl hover:bg-white/5 transition">
+                <i class="fa-brands fa-google text-3xl text-brand-cyan"></i>
+                <div>
+                    <h3 class="font-bold text-white">Google Data Analytics</h3>
+                    <p class="text-xs text-brand-text">Coursera</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 border border-white/5 rounded-xl hover:bg-white/5 transition">
+                <i class="fa-solid fa-robot text-3xl text-orange-500"></i>
+                <div>
+                    <h3 class="font-bold text-white">RPA Developer Foundation</h3>
+                    <p class="text-xs text-brand-text">UiPath Academy</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 border border-white/5 rounded-xl hover:bg-white/5 transition">
+                <i class="fa-brands fa-python text-3xl text-yellow-400"></i>
+                <div>
+                    <h3 class="font-bold text-white">Python Fundamentals</h3>
+                    <p class="text-xs text-brand-text">Great Learning</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 border border-white/5 rounded-xl hover:bg-white/5 transition">
+                <i class="fa-solid fa-database text-3xl text-blue-400"></i>
+                <div>
+                    <h3 class="font-bold text-white">SQL Certification</h3>
+                    <p class="text-xs text-brand-text">HackerRank</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 border border-white/5 rounded-xl hover:bg-white/5 transition">
+                <i class="fa-solid fa-image text-3xl text-red-400"></i>
+                <div>
+                    <h3 class="font-bold text-white">Image Processing Onramp</h3>
+                    <p class="text-xs text-brand-text">MathWorks</p>
+                </div>
+            </div>
+             <div class="flex items-center gap-4 p-4 border border-white/5 rounded-xl hover:bg-white/5 transition">
+                <i class="fa-solid fa-calculator text-3xl text-red-600"></i>
+                <div>
+                    <h3 class="font-bold text-white">MATLAB Onramp</h3>
+                    <p class="text-xs text-brand-text">MathWorks</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-32 px-6 max-w-2xl mx-auto text-center relative z-10">
+        <h2 class="text-5xl font-display font-bold mb-8">Let's Build Something.</h2>
+        <div class="glass p-10 rounded-3xl border border-white/5">
+            <p class="text-brand-text mb-8 text-lg">
+                I am actively seeking <strong>Summer 2025 Co-ops</strong> and <strong>Full-time 2026</strong> roles in Software Engineering, AI/ML, and Data Science.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:yjadhav@syr.edu" class="px-8 py-4 bg-brand-cyan text-black font-bold rounded-xl hover:shadow-[0_0_20px_rgba(0,234,255,0.4)] hover:scale-105 transition">
+                    <i class="fa-solid fa-envelope mr-2"></i> Send Email
+                </a>
+                <a href="https://linkedin.com/in/yashvjadhav" target="_blank" class="px-8 py-4 bg-white/5 border border-white/10 text-white font-bold rounded-xl hover:bg-white/10 transition">
+                    <i class="fa-brands fa-linkedin mr-2"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-brand-text/30 text-xs border-t border-white/5 bg-brand-dark">
+        <p>© 2026 Yash Jadhav. Engineered with Tailwind & Passion.</p>
+    </footer>
+
+    <script>
+        // --- 1. Filter Logic ---
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projects = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-cyan', 'text-black');
+                    b.classList.add('bg-white/5', 'text-brand-text');
+                    b.classList.add('hover:bg-white/10');
+                    b.classList.add('hover:text-white');
+                });
+                // Add active class
+                btn.classList.remove('bg-white/5', 'text-brand-text', 'hover:bg-white/10', 'hover:text-white');
+                btn.classList.add('bg-brand-cyan', 'text-black');
+
+                const filter = btn.getAttribute('data-filter');
+                
+                projects.forEach(project => {
+                    if (filter === 'all' || project.getAttribute('data-category') === filter) {
+                        project.style.display = 'flex'; // Use flex to maintain layout
+                        project.classList.add('animate-fade-in');
+                    } else {
+                        project.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // --- 2. Spotlight Effect ---
+        function initSpotlight() {
+            const cards = document.querySelectorAll(".spotlight-card");
+            cards.forEach(card => {
+                card.onmousemove = e => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty("--mouse-x", `${x}px`);
+                    card.style.setProperty("--mouse-y", `${y}px`);
+                }
+            });
+        }
+
+        // --- 3. Mobile Menu ---
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+            document.getElementById('mobile-menu').classList.toggle('flex');
+        }
+    </script>
+</body>
+</html>
